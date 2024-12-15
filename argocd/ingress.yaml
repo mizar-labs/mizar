@@ -21,7 +21,7 @@ spec:
           port: 80
           scheme: h2c
   tls:
-    secret-name: argocd-tls
+    secretName: argocd-tls
 ---
 apiVersion: cert-manager.io/v1
 kind: Certificate
