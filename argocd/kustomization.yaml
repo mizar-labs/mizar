@@ -8,5 +8,5 @@ configMapGenerator:
   - name: argocd-cmd-params-cm
     behavior: replace
     envs:
-      - config/argocd-cmd-params-cm.yaml
+      - config/argocd-cmd-params-cm
 apiVersion: kustomize.config.k8s.io/v1beta1
