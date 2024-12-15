@@ -21,4 +21,17 @@ spec:
           port: 80
           scheme: h2c
   tls:
-    certResolver: le-staging
+    secret-name: argocd-tls
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: argocd
+  namespace: argocd
+spec:
+  secretName: argocd-tls        # <===  Name of secret where the generated certificate will be stored.
+  dnsNames:
+    - "argocd.mizar.scalar.cloud"
+  issuerRef:
+    name: le-staging
+    kind: ClusterIssuer
