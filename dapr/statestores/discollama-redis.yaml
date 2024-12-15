@@ -1,0 +1,16 @@
+kind: Component
+apiVersion: dapr.io/v1alpha1
+metadata:
+  name: prod-discollama
+  namespace: discollama-bat
+spec:
+  type: state.redis
+  version: v1
+  ignoreErrors: false
+  metadata:
+    - name: redisHost
+      value: discollama-prod-redis-master:6379
+    - name: redisPassword
+      secretKeyRef:
+        name: discollama-prod-redis
+        key: redis-password
