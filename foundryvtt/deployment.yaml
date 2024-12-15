@@ -1,0 +1,131 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: foundry-foundry-vtt
+  namespace: foundry
+  labels:
+    app.kubernetes.io/instance: foundry
+    app.kubernetes.io/name: foundry-vtt
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/instance: foundry
+      app.kubernetes.io/name: foundry-vtt
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/instance: foundry
+        app.kubernetes.io/name: foundry-vtt
+    spec:
+      volumes:
+        - name: data
+          persistentVolumeClaim:
+            claimName: foundry-foundry-vtt
+        - name: secret-aws
+          secret:
+            secretName: foundry-aws-conf
+            defaultMode: 420
+      containers:
+        - name: foundry-vtt
+          image: felddy/foundryvtt:11.315
+          ports:
+            - name: http
+              containerPort: 30000
+              protocol: TCP
+          env:
+            - name: UV_THREADPOOL_SIZE
+              value: '16'
+            - name: CONTAINER_CACHE
+              value: /data/container_cache
+            - name: FOUNDRY_GID
+              value: '421'
+            - name: CONTAINER_PATCHES
+              value: /data/patches
+            - name: TIMEZONE
+              value: America/Chicago
+            - name: FOUNDRY_UID
+              value: '421'
+            - name: FOUNDRY_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: foundry-foundry-vtt
+                  key: username
+            - name: FOUNDRY_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: foundry-foundry-vtt
+                  key: password
+            - name: FOUNDRY_ADMIN_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: foundry-foundry-vtt
+                  key: adminPassword
+            - name: FOUNDRY_HOSTNAME
+              value: foundry.mizar.scalar.cloud
+            - name: FOUNDRY_LANGUAGE
+              value: en.core
+            - name: FOUNDRY_LICENSE_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: foundry-foundry-vtt
+                  key: licenseKey
+            - name: FOUNDRY_MINIFY_STATIC_FILES
+              value: 'true'
+            - name: FOUNDRY_CSS_THEME
+              value: foundry
+            - name: FOUNDRY_PROXY_PORT
+              value: '443'
+            - name: FOUNDRY_PROXY_SSL
+              value: 'true'
+            - name: FOUNDRY_VERSION
+              value: '11.315'
+            - name: FOUNDRY_AWS_CONFIG
+              value: /etc/secretaws/awsConfig.json
+            - name: FOUNDRY_COMPRESS_WEBSOCKET
+              value: 'true'
+          resources:
+            requests:
+              cpu: 500m
+              memory: 512Mi
+          volumeMounts:
+            - name: data
+              mountPath: /data
+            - name: secret-aws
+              readOnly: true
+              mountPath: /etc/secretaws/
+          livenessProbe:
+            httpGet:
+              path: /
+              port: http
+              scheme: HTTP
+            initialDelaySeconds: 600
+            timeoutSeconds: 1
+            periodSeconds: 25
+            successThreshold: 1
+            failureThreshold: 40
+          readinessProbe:
+            httpGet:
+              path: /
+              port: http
+              scheme: HTTP
+            initialDelaySeconds: 30
+            timeoutSeconds: 1
+            periodSeconds: 10
+            successThreshold: 1
+            failureThreshold: 3
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+          imagePullPolicy: IfNotPresent
+          securityContext: {}
+      restartPolicy: Always
+      terminationGracePeriodSeconds: 30
+      dnsPolicy: ClusterFirst
+      serviceAccountName: default
+      serviceAccount: default
+      securityContext: {}
+      schedulerName: default-scheduler
+  strategy:
+    type: Recreate
+  revisionHistoryLimit: 10
+  progressDeadlineSeconds: 600
