@@ -2,6 +2,7 @@ apiVersion: dapr.io/v1alpha1
 kind: Configuration
 metadata:
   namespace: discollama-bat
+  name: tracing
 spec:
   metric:
     enabled: true
