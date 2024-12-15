@@ -1,0 +1,5 @@
+kind: Kustomization
+resources:
+  - configurations
+  - statestores
+apiVersion: kustomize.config.k8s.io/v1beta1
