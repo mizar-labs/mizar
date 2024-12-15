@@ -29,9 +29,9 @@ metadata:
   name: argocd
   namespace: argocd
 spec:
-  secretName: argocd-tls        # <===  Name of secret where the generated certificate will be stored.
+  secretName: argocd-tls
   dnsNames:
     - "argocd.mizar.scalar.cloud"
   issuerRef:
-    name: le-staging
+    name: le-prod
     kind: ClusterIssuer
