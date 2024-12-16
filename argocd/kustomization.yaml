@@ -9,4 +9,9 @@ configMapGenerator:
     behavior: replace
     envs:
       - config/argocd-cmd-params-cm
+patches:
+  - path: config/argocd-cm.yaml
+    target:
+      kind: ConfigMap
+      name: argocd-cm
 apiVersion: kustomize.config.k8s.io/v1beta1
