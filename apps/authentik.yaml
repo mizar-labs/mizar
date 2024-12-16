@@ -5,11 +5,35 @@ metadata:
   namespace: argocd
 spec:
   destination:
+    namespace: authentik
     server: https://kubernetes.default.svc
   source:
-    path: authentik
-    repoURL: https://github.com/mizar-labs/mizar
-    targetRevision: HEAD
+    repoURL: https://charts.goauthentik.io
+    targetRevision: 2024.10.5-1
+    chart: authentik
+    helm:
+      values: |
+        global:
+          envFrom:
+            - secretRef:
+                name: authentik-global-config
+        server:
+          ingress:
+            annotations:
+              traefik.ingress.kubernetes.io/router.entrypoints: websecure
+              cert-manager.io/cluster-issuer: le-staging
+            # Specify kubernetes ingress controller class name
+            ingressClassName: traefik
+            enabled: true
+            hosts:
+                - authentik.mizar.scalar.cloud
+        postgresql:
+          enabled: true
+          auth:
+            existingSecret: postgresql-config
+        redis:
+          enabled: true
+  sources: []
   project: default
   syncPolicy:
     automated:
