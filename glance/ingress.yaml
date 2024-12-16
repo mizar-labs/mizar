@@ -28,5 +28,5 @@ spec:
   dnsNames:
     - "glance.mizar.scalar.cloud"
   issuerRef:
-    name: le-staging
+    name: le-prod
     kind: ClusterIssuer
