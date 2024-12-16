@@ -1,0 +1,35 @@
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: hubble
+  namespace: kube-system
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - kind: Rule
+      match: Host(`hubble.mizar.scalar.cloud`)
+      middlewares:
+        - name: ak-outpost-authentik-embedded-outpost
+          namespace: authentik
+      priority: 10
+      services:
+        - name: hubble-ui
+          kind: Service
+          namespace: kube-system
+          port: http
+  tls:
+    secretName: hubble-ui-tls
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: hubble-ui
+  namespace: kube-system
+spec:
+  secretName: hubble-ui-tls
+  dnsNames:
+    - "hubble.mizar.scalar.cloud"
+  issuerRef:
+    name: le-staging
+    kind: ClusterIssuer
