@@ -31,8 +31,16 @@ spec:
           enabled: true
           auth:
             existingSecret: postgresql-config
-          networkPolicy:
-            enabled: false
+          primary:
+            networkPolicy:
+              enabled: false
+          readReplicas:
+            networkPolicy:
+              enabled: false
+          backup:
+            cronjob:
+              networkPolicy:
+                enabled: false
         redis:
           enabled: true
           networkPolicy:
