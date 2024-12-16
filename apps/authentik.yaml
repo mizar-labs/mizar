@@ -31,8 +31,12 @@ spec:
           enabled: true
           auth:
             existingSecret: postgresql-config
+          networkPolicy:
+            enabled: false
         redis:
           enabled: true
+          networkPolicy:
+            enabled: false
   sources: []
   project: default
   syncPolicy:
