@@ -1,0 +1,35 @@
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: tube-archivist
+  namespace: tube-archivist
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - kind: Rule
+      match: Host(`tube.mizar.scalar.cloud`)
+      middlewares:
+        - name: ak-outpost-authentik-embedded-outpost
+          namespace: authentik
+      priority: 10
+      services:
+        - name: tubearchivist
+          kind: Service
+          namespace: tube-archivist
+          port: http
+  tls:
+    secretName: tube-archivist-tls
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: tube-archivist
+  namespace: tube-archivist
+spec:
+  secretName: tube-archivist-tls
+  dnsNames:
+    - "tube.mizar.scalar.cloud"
+  issuerRef:
+    name: le-staging
+    kind: ClusterIssuer
