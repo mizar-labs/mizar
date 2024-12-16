@@ -19,7 +19,7 @@ spec:
           namespace: ollama
           port: http
   tls:
-    secretName: ollama-tls
+    secretName: ollama-api-tls
 ---
 apiVersion: cert-manager.io/v1
 kind: Certificate
@@ -27,7 +27,7 @@ metadata:
   name: ollama
   namespace: ollama
 spec:
-  secretName: ollama-tls
+  secretName: ollama-api-tls
   dnsNames:
     - "ollama.mizar.scalar.cloud"
   issuerRef:
