@@ -1,0 +1,35 @@
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: longhorn-frontend
+  namespace: longhorn-system
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - kind: Rule
+      match: Host(`longhorn.mizar.scalar.cloud`)
+      middlewares:
+        - name: ak-outpost-authentik-embedded-outpost
+          namespace: authentik
+      priority: 10
+      services:
+        - name: longhorn-frontend
+          kind: Service
+          namespace: longhorn-system
+          port: http
+  tls:
+    secretName: longhorn-frontend-tls
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: longhorn-frontend
+  namespace: longhorn-system
+spec:
+  secretName: longhorn-frontend-tls
+  dnsNames:
+    - "longhorn.mizar.scalar.cloud"
+  issuerRef:
+    name: le-staging
+    kind: ClusterIssuer
