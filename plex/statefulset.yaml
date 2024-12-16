@@ -49,8 +49,7 @@ spec:
       restartPolicy: Always
       terminationGracePeriodSeconds: 120
       dnsPolicy: ClusterFirst
-      serviceAccountName: plex-plex-media-server
-      serviceAccount: plex-plex-media-server
+      serviceAccountName: default
       securityContext: {}
       affinity: {}
       schedulerName: default-scheduler
