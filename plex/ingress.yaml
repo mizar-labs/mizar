@@ -21,12 +21,12 @@ spec:
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
-  name: foundryvtt
+  name: plex
   namespace: plex
 spec:
   secretName: plex-pms-tls
   dnsNames:
     - "plex.mizar.scalar.cloud"
   issuerRef:
-    name: le-staging
+    name: le-prod
     kind: ClusterIssuer
