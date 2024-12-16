@@ -10,9 +10,8 @@ spec:
     - kind: Rule
       match: Host(`tube.mizar.scalar.cloud`)
       middlewares:
-        - name: ak-outpost-authentik-embedded-outpost
-          namespace: authentik
-      priority: 10
+        - name: home-networks
+          namespace: default
       services:
         - name: tubearchivist
           kind: Service
