@@ -1,0 +1,20 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: foundry-foundry-vtt
+  namespace: foundry
+spec:
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: http
+  selector:
+    app.kubernetes.io/instance: foundry
+    app.kubernetes.io/name: foundry-vtt
+  type: ClusterIP
+  sessionAffinity: None
+  ipFamilies:
+    - IPv4
+  ipFamilyPolicy: SingleStack
+  internalTrafficPolicy: Cluster
