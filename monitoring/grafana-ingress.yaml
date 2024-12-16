@@ -1,0 +1,32 @@
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: grafana
+  namespace: monitoring
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - kind: Rule
+      match: Host(`grafana.mizar.scalar.cloud`)
+      priority: 10
+      services:
+        - name: grafana
+          kind: Service
+          namespace: monitoring
+          port: http
+  tls:
+    secretName: monitoring-grafana-tls
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: grafana
+  namespace: monitoring
+spec:
+  secretName: monitoring-grafana-tls
+  dnsNames:
+    - "grafana.mizar.scalar.cloud"
+  issuerRef:
+    name: le-staging
+    kind: ClusterIssuer
