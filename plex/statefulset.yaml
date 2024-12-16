@@ -4,7 +4,7 @@ metadata:
   name: plex-plex-media-server
   namespace: plex
 spec:
-  replicas: 0
+  replicas: 1
   selector:
     matchLabels:
       app.kubernetes.io/instance: plex
