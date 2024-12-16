@@ -5,11 +5,11 @@ metadata:
   name: open-webui
   namespace: open-webui
   labels:
-    app.kubernetes.io/instance: release-name
+    app.kubernetes.io/instance: open-webui
     app.kubernetes.io/component: open-webui
 spec:
   selector:
-    app.kubernetes.io/instance: release-name
+    app.kubernetes.io/instance: open-webui
     app.kubernetes.io/component: open-webui
   type: ClusterIP
   ports:
