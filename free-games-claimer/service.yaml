@@ -1,0 +1,19 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: free-games-claimer
+  namespace: free-games-claimer
+spec:
+  ports:
+    - name: http
+      protocol: TCP
+      port: 6080
+      targetPort: 6080
+  selector:
+    io.kompose.service: free-games-claimer
+  type: ClusterIP
+  sessionAffinity: None
+  ipFamilies:
+    - IPv4
+  ipFamilyPolicy: SingleStack
+  internalTrafficPolicy: Cluster
