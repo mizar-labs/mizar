@@ -1,0 +1,32 @@
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: foundryvtt
+  namespace: foundry
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - kind: Rule
+      match: Host(`foundry.mizar.scalar.cloud`)
+      priority: 10
+      services:
+        - name: foundry-foundry-vtt
+          kind: Service
+          namespace: foundry
+          port: http
+  tls:
+    secretName: foundryvtt-tls
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: foundryvtt
+  namespace: foundry
+spec:
+  secretName: foundryvtt-tls
+  dnsNames:
+    - "foundry.mizar.scalar.cloud"
+  issuerRef:
+    name: le-staging
+    kind: ClusterIssuer
