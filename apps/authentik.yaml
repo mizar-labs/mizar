@@ -26,9 +26,9 @@ spec:
             ingressClassName: traefik
             enabled: true
             tls:
-              secretName: authentik-ingress-tls
-              hosts:
+            - hosts:
                 - authentik.mizar.scalar.cloud
+              secretName: authentik-ingress-tls
             hosts:
                 - authentik.mizar.scalar.cloud
         postgresql:
