@@ -25,6 +25,10 @@ spec:
             # Specify kubernetes ingress controller class name
             ingressClassName: traefik
             enabled: true
+            tls:
+              secretName: authentik-ingress-tls
+              hosts:
+                - authentik.mizar.scalar.cloud
             hosts:
                 - authentik.mizar.scalar.cloud
         postgresql:
