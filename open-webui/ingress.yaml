@@ -12,7 +12,9 @@ spec:
       priority: 10
       services:
         - name: open-webui
-          port: 80
+          kind: Service
+          namespace: open-webui
+          port: http
   tls:
     secretName: open-webui-tls
 ---
