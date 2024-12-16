@@ -1,0 +1,72 @@
+kind: StatefulSet
+apiVersion: apps/v1
+metadata:
+  name: plex-plex-media-server
+  namespace: plex
+spec:
+  replicas: 0
+  selector:
+    matchLabels:
+      app.kubernetes.io/instance: plex
+      app.kubernetes.io/name: plex-media-server
+  template:
+    metadata:
+      labels:
+        app: plex-media-server
+        app.kubernetes.io/instance: plex
+        app.kubernetes.io/name: plex-media-server
+    spec:
+      volumes:
+        - name: pms-config
+          persistentVolumeClaim:
+            claimName: config
+        - name: pms-transcode
+          emptyDir: {}
+        - name: media
+          persistentVolumeClaim:
+            claimName: media
+      containers:
+        - name: plex-plex-media-server-pms
+          image: index.docker.io/plexinc/pms-docker:latest
+          ports:
+            - name: pms
+              containerPort: 32400
+              protocol: TCP
+          envFrom:
+            - secretRef:
+                name: plex-config
+          resources: {}
+          volumeMounts:
+            - name: pms-config
+              mountPath: /config
+            - name: pms-transcode
+              mountPath: /transcode
+            - name: media
+              mountPath: /data
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+          imagePullPolicy: IfNotPresent
+      restartPolicy: Always
+      terminationGracePeriodSeconds: 120
+      dnsPolicy: ClusterFirst
+      serviceAccountName: plex-plex-media-server
+      serviceAccount: plex-plex-media-server
+      securityContext: {}
+      affinity: {}
+      schedulerName: default-scheduler
+      tolerations:
+        - key: local-storage-available
+          operator: Equal
+          value: 'true'
+          effect: NoSchedule
+      runtimeClassName: nvidia
+  serviceName: plex-plex-media-server
+  podManagementPolicy: OrderedReady
+  updateStrategy:
+    type: RollingUpdate
+    rollingUpdate:
+      partition: 0
+  revisionHistoryLimit: 10
+  persistentVolumeClaimRetentionPolicy:
+    whenDeleted: Retain
+    whenScaled: Retain
