@@ -10,7 +10,7 @@ spec:
     - kind: Rule
       match: Host(`tube.mizar.scalar.cloud`)
       middlewares:
-        - name: home-networks
+        - name: authentik-auth-proxy
           namespace: default
       services:
         - name: tubearchivist
