@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: epic-free-games-ronin
+  namespace: argocd
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+  source:
+    path: epic-free-games-ronin
+    repoURL: https://github.com/mizar-labs/mizar
+    targetRevision: HEAD
+  project: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
