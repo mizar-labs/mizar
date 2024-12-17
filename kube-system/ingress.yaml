@@ -10,8 +10,8 @@ spec:
     - kind: Rule
       match: Host(`hubble.mizar.scalar.cloud`)
       middlewares:
-        - name: ak-outpost-authentik-embedded-outpost
-          namespace: authentik
+        - name: authentik-auth-proxy
+          namespace: default
       priority: 10
       services:
         - name: hubble-ui
