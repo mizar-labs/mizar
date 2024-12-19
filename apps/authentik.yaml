@@ -18,6 +18,13 @@ spec:
             - secretRef:
                 name: authentik-global-config
         server:
+          volumes:
+            - name: authentik
+              persistentVolumeClaim:
+                claimName: authentik-custom-web
+          volumeMounts:
+            - name: authentik-custom-web
+              mountPath: /custom-web
           ingress:
             annotations:
               traefik.ingress.kubernetes.io/router.entrypoints: websecure
