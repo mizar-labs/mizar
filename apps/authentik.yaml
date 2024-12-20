@@ -19,9 +19,9 @@ spec:
                 name: authentik-global-config
         server:
           volumes:
-            - name: authentik
-              persistentVolumeClaim:
-                claimName: authentik-custom-web
+            - name: authentik-custom-web
+              configMap:
+                name: authentik-custom-web
           volumeMounts:
             - name: authentik-custom-web
               mountPath: /custom-web
