@@ -6,7 +6,7 @@ metadata:
   labels:
     io.kompose.service: free-games-claimer
 spec:
-  replicas: 1
+  replicas: 0
   selector:
     matchLabels:
       io.kompose.service: free-games-claimer
