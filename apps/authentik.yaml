@@ -24,7 +24,7 @@ spec:
                 name: authentik-custom-web
           volumeMounts:
             - name: authentik-custom-web
-              mountPath: /custom-web
+              mountPath: /media/public/custom-web
           ingress:
             annotations:
               traefik.ingress.kubernetes.io/router.entrypoints: websecure
