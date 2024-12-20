@@ -22,9 +22,14 @@ spec:
             - name: authentik-custom-web
               configMap:
                 name: authentik-custom-web
+           - name: authentik-custom-logo
+              configMap:
+                name: authentik-custom-logo
           volumeMounts:
             - name: authentik-custom-web
               mountPath: /media/public/custom-web
+            - name: authentik-custom-logo
+              mountPath: /media/public/custom-logo
           ingress:
             annotations:
               traefik.ingress.kubernetes.io/router.entrypoints: websecure
