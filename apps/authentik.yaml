@@ -22,7 +22,7 @@ spec:
             - name: authentik-custom-web
               configMap:
                 name: authentik-custom-web
-           - name: authentik-custom-logo
+            - name: authentik-custom-logo
               configMap:
                 name: authentik-custom-logo
           volumeMounts:
