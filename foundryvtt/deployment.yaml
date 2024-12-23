@@ -28,7 +28,7 @@ spec:
             defaultMode: 420
       containers:
         - name: foundry-vtt
-          image: felddy/foundryvtt:11.315
+          image: felddy/foundryvtt:release
           ports:
             - name: http
               containerPort: 30000
