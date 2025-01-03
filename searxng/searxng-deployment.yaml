@@ -18,14 +18,11 @@ spec:
         io.kompose.service: searxng
     spec:
       containers:
-        - env:
-            - name: UWSGI_THREADS
-              value: "4"
-            - name: UWSGI_WORKERS
-              value: "4"
         - envFrom:
             - secretRef:
                 name: searxng-config-secrets
+            - configMapRef:
+                name: searxng-tune
           image: docker.io/searxng/searxng:latest
           name: searxng
           ports:
