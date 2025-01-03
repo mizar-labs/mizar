@@ -8,6 +8,7 @@ resources:
   - searxng-namespace.yaml
   - searxng-service.yaml
   - valkey-data2-persistentvolumeclaim.yaml
+  - ingress.yaml
 configMapGenerator:
   - name: searxng-config
     files:
