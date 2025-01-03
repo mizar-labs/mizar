@@ -1,0 +1,12 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: ollama
+  namespace: ollama
+spec:
+  secretName: ollama-api-tls
+  dnsNames:
+    - "ollama.mizar.scalar.cloud"
+  issuerRef:
+    name: le-prod
+    kind: ClusterIssuer
