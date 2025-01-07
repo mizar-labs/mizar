@@ -3,6 +3,8 @@ kind: Ingress
 metadata:
   name: ollama
   namespace: ollama
+  annotations:
+    tailscale.com/experimental-forward-cluster-traffic-via-ingress: "true"
 spec:
   defaultBackend:
     service:
