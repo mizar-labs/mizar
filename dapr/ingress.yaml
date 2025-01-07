@@ -1,15 +1,15 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: grafana
-  namespace: monitoring
+  name: dapr
+  namespace: dapr-system
 spec:
   defaultBackend:
     service:
-      name: grafana
+      name: dapr-dashboard
       port:
-        name: http
+        number: 8080
   ingressClassName: tailscale
   tls:
     - hosts:
-        - grafana
+        - dapr
