@@ -13,7 +13,8 @@ spec:
     chart: redis
     helm:
       values: |
-        auth.enabled: false
+        auth:
+          enabled: false
   sources: []
   project: default
   syncPolicy:
