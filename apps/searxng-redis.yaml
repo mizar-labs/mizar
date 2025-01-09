@@ -8,7 +8,7 @@ spec:
     namespace: databases
     server: https://kubernetes.default.svc
   source:
-    repoURL: https://registry-1.docker.io/bitnamicharts
+    repoURL: https://charts.bitnami.com/bitnami
     targetRevision: 20.6.2
     chart: redis
     helm:
