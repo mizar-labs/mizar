@@ -1,0 +1,21 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: coroot-operator
+  namespace: argocd
+spec:
+  destination:
+    namespace: coroot
+    server: https://kubernetes.default.svc
+  source:
+    repoURL: https://coroot.github.io/helm-charts
+    targetRevision: 0.2.0
+    chart: coroot-operator
+  sources: []
+  project: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
