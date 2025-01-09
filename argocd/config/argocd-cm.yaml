@@ -1,5 +1,10 @@
 apiVersion: v1
 data:
+  resource.customizations.ignoreDifferences.all: |
+    managedFieldsManagers:
+    - operator
+    jsonPointers:
+    - /spec/externalName
   resource.exclusions: |
     - apiGroups:
       - "cilium.io"
