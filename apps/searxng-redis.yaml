@@ -1,0 +1,24 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: searxng-db
+  namespace: argocd
+spec:
+  destination:
+    namespace: databases
+    server: https://kubernetes.default.svc
+  source:
+    repoURL: https://registry-1.docker.io/bitnamicharts
+    targetRevision: 20.6.2
+    chart: redis
+    helm:
+      values: |
+        auth.enabled: false
+  sources: []
+  project: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
