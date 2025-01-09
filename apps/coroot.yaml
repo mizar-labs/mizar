@@ -15,7 +15,6 @@ spec:
       values: |
         clickhouse:
           shards: 2
-        clickhouse:
           replicas: 2
   sources: []
   project: default
