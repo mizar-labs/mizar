@@ -1,13 +1,9 @@
 kind: Kustomization
 namespace: searxng
 resources:
-  - redis-deployment.yaml
-  - redis-service.yaml
-  - searxng-claim0-persistentvolumeclaim.yaml
   - searxng-deployment.yaml
   - searxng-namespace.yaml
   - searxng-service.yaml
-  - valkey-data2-persistentvolumeclaim.yaml
   - ingress.yaml
 configMapGenerator:
   - name: searxng-config
