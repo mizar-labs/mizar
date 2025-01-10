@@ -5,6 +5,7 @@ resources:
   - searxng-namespace.yaml
   - searxng-service.yaml
   - ingress.yaml
+  - ingressroute.yaml
 configMapGenerator:
   - name: searxng-config
     files:
