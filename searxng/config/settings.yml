@@ -5,3 +5,10 @@ server:
   image_proxy: true
 ui:
   static_use_hash: true
+search:
+  safe_search: 0
+  formats:
+    - html
+    - json
+    - rss
+    - csv
