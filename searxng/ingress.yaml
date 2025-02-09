@@ -3,6 +3,8 @@ kind: Ingress
 metadata:
   name: searxng
   namespace: searxng
+  annotations:
+    tailscale.com/experimental-forward-cluster-traffic-via-ingress: "true"
 spec:
   defaultBackend:
     service:
