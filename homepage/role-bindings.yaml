@@ -6,34 +6,11 @@ metadata:
     app.kubernetes.io/name: homepage
 rules:
   - apiGroups:
-      - ""
+      - "*"
     resources:
       - "*"
     verbs:
-      - get
-      - list
-  - apiGroups:
-      - extensions
-      - networking.k8s.io
-    resources:
       - "*"
-    verbs:
-      - get
-      - list
-  - apiGroups:
-      - traefik.io
-    resources:
-      - "*"
-    verbs:
-      - get
-      - list
-  - apiGroups:
-      - metrics.k8s.io
-    resources:
-      - "*"
-    verbs:
-      - get
-      - list
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
