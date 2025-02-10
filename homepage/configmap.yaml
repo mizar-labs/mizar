@@ -10,7 +10,7 @@ data:
     mode: cluster
   settings.yaml: |
     providers:
-      finnhub: {{ HOMEPAGE_VAR_FINNHUB_API_KEY }}
+      finnhub: {{HOMEPAGE_VAR_FINNHUB_API_KEY}}
   #settings.yaml: |
   #  providers:
   #    longhorn:
