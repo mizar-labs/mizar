@@ -1,5 +1,5 @@
-- My First Group:
-  - AI Service:
+- Cluster:
+  - Load Balancer:
       href: https://traefik.tahr-toad.ts.net
       description: Traefik Dashboard
       widget:
