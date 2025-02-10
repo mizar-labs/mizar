@@ -7,7 +7,7 @@ resources:
   - service-account.yaml
 configMapGenerator:
   - name: homepage
-    behavior: replace
+    behavior: create
     files:
       - config/bookmarks.yaml
       - config/custom.css
