@@ -1,0 +1,32 @@
+- kubernetes:
+    cluster:
+      show: true
+      cpu: true
+      memory: true
+      showLabel: true
+      label: "cluster"
+    nodes:
+      show: true
+      cpu: true
+      memory: true
+      showLabel: true
+- resources:
+  backend: resources
+  expanded: true
+  cpu: true
+  memory: true
+  network: default
+- search:
+    provider: duckduckgo
+    target: _blank
+- stocks:
+    provider: finnhub
+    color: true # optional, defaults to true
+    cache: 1 # optional, default caches results for 1 minute
+    watchlist:
+      - VSAT
+      - GSAT
+      - SNDL
+      - GME
+      - AMC
+      - NVDA
