@@ -1,0 +1,15 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: traefik-dash
+  namespace: traefik
+spec:
+  defaultBackend:
+    service:
+      name: traefik-dash
+      port:
+        name: dashboard
+  ingressClassName: tailscale
+  tls:
+    - hosts:
+        - traefik
