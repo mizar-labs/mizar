@@ -2,7 +2,6 @@ kind: Kustomization
 resources:
   - install.yaml
   - ingress.yaml
-  - ingressroute.yaml
 generatorOptions:
   disableNameSuffixHash: true
 configMapGenerator:
