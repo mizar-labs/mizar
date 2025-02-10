@@ -1,4 +1,5 @@
 kind: Kustomization
+namespace: homepage
 resources:
   - deployment.yaml
   - service.yaml
