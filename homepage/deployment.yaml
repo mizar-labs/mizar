@@ -27,8 +27,8 @@ spec:
           image: "ghcr.io/gethomepage/homepage:latest"
           imagePullPolicy: Always
           envFrom:
-            secretRef:
-              name: config-keys
+            - secretRef:
+                name: config-keys
           ports:
             - name: http
               containerPort: 3000
