@@ -1,7 +1,10 @@
 - My First Group:
-  - My First Service:
-      href: http://localhost/
-      description: Homepage is awesome
+  - AI Service:
+      href: https://traefik.tahr-toad.ts.net
+      description: Traefik Dashboard
+      widget:
+        type: traefik
+        url: https://traefik.tahr-toad.ts.net
 
 - My Second Group:
   - My Second Service:
