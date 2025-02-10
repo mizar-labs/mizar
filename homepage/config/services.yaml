@@ -6,10 +6,15 @@
         type: traefik
         url: https://traefik.tahr-toad.ts.net
 
-- My Second Group:
-  - My Second Service:
-      href: http://localhost/
-      description: Homepage is the best
+- Global:
+  - NextDNS:
+      href: https://my.nextdns.io/
+      description: DNS Management
+      widget:
+        type: nextdns
+        profile: {{HOMEPAGE_VAR_NEXTDNS_PROFILE_MAIN}}
+        key: {{HOMEPAGE_VAR_NEXTDNS_KEY}}
+
 
 - My Third Group:
   - My Third Service:
