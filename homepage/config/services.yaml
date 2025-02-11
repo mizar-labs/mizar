@@ -1,19 +1,19 @@
 - Next Up:
   - Calendar:
-    widget:
-      type: calendar
-      firstDayInWeek: sunday # optional - defaults to monday
-      view: monthly # optional - possible values monthly, agenda
-      maxEvents: 10 # optional - defaults to 10
-      showTime: true # optional - show time for event happening today - defaults to false
-      timezone: America/Chicago # optional and only when timezone is not detected properly (slightly slower performance) - force timezone for ical events (if it's the same - no change, if missing or different in ical - will be converted to this timezone)
-      integrations: # optional
-        - type: ical # Show calendar events from another service
-          url: {{HOMEPAGE_VAR_ICAL_URL}} # required - url to ical file
-          name: My Events # required - name for these calendar events
-          color: zinc # optional - defaults to pre-defined color for the service (zinc for ical)
-          params: # optional - additional params for the service
-            showName: true # optional - show name before event title in event line - defaults to false
+      widget:
+        type: calendar
+        firstDayInWeek: sunday # optional - defaults to monday
+        view: monthly # optional - possible values monthly, agenda
+        maxEvents: 10 # optional - defaults to 10
+        showTime: true # optional - show time for event happening today - defaults to false
+        timezone: America/Chicago # optional and only when timezone is not detected properly (slightly slower performance) - force timezone for ical events (if it's the same - no change, if missing or different in ical - will be converted to this timezone)
+        integrations: # optional
+          - type: ical # Show calendar events from another service
+            url: {{HOMEPAGE_VAR_ICAL_URL}} # required - url to ical file
+            name: My Events # required - name for these calendar events
+            color: zinc # optional - defaults to pre-defined color for the service (zinc for ical)
+            params: # optional - additional params for the service
+              showName: true # optional - show name before event title in event line - defaults to false
   - Agenda:
       widget:
         type: calendar
