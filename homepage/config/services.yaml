@@ -1,6 +1,6 @@
 - Home:
   - Calendar:
-      widgets:
+      widget:
         - type: calendar
           firstDayInWeek: sunday # optional - defaults to monday
           view: monthly # optional - possible values monthly, agenda
@@ -14,6 +14,8 @@
               color: zinc # optional - defaults to pre-defined color for the service (zinc for ical)
               params: # optional - additional params for the service
                 showName: true # optional - show name before event title in event line - defaults to false
+  - Agenda:
+      widget:
         - type: calendar
           view: agenda
           maxEvents: 10 # optional - defaults to 10
