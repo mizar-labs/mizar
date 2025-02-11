@@ -1,9 +1,4 @@
 - Services:
-    - Ollama:
-        icon: ollama.png
-        href: https://ollama.tahr-toad.ts.net
-        description: Ollama API
-
 - Home:
   - Calendar:
       widget:

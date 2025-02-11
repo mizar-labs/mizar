@@ -5,6 +5,12 @@ metadata:
   namespace: ollama
   annotations:
     tailscale.com/experimental-forward-cluster-traffic-via-ingress: "true"
+    gethomepage.dev/description: Ollama API
+    gethomepage.dev/enabled: "true"
+    gethomepage.dev/group: Services
+    gethomepage.dev/icon: ollama.png
+    gethomepage.dev/name: Ollama
+    gethomepage.dev/href: https://ollama.tahr-toad.ts.net
 spec:
   defaultBackend:
     service:
