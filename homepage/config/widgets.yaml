@@ -28,7 +28,6 @@
     latitude: 50.449684
     longitude: 30.525026
     units: metric # or imperial
-    provider: openweathermap
     apiKey: {{HOMEPAGE_VAR_OPENWEATHERMAP_API_KEY}}
     cache: 5 # Time in minutes to cache API responses, to stay within limits
     format: # optional, Intl.NumberFormat options
