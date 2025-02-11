@@ -5,6 +5,13 @@
       widget:
         type: traefik
         url: https://traefik.tahr-toad.ts.net
+  - ArgoCD:
+      href: https://argocd.tahr-toad.ts.net
+      description: ArgoCD Dashboard
+      widget:
+        type: argocd
+        url: http://argocd.host.or.ip:port
+        key: {{HOMEPAGE_VAR_ARGOCD_KEY}}
 
 - Global:
   - NextDNS:
