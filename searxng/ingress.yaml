@@ -5,6 +5,12 @@ metadata:
   namespace: searxng
   annotations:
     tailscale.com/experimental-forward-cluster-traffic-via-ingress: "true"
+    gethomepage.dev/description: Search Engine
+    gethomepage.dev/enabled: "true"
+    gethomepage.dev/group: Services
+    gethomepage.dev/icon: searxng.png
+    gethomepage.dev/name: Search
+    gethomepage.dev/href: https://search.tahr-toad.ts.net
 spec:
   defaultBackend:
     service:

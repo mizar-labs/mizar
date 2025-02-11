@@ -3,6 +3,14 @@ kind: Ingress
 metadata:
   name: glance
   namespace: glance
+  annotations:
+    tailscale.com/experimental-forward-cluster-traffic-via-ingress: "true"
+    gethomepage.dev/description: Smart Device HomePage
+    gethomepage.dev/enabled: "true"
+    gethomepage.dev/group: Services
+    gethomepage.dev/icon: glance.png
+    gethomepage.dev/name: Glance
+    gethomepage.dev/href: https://glance.tahr-toad.ts.net
 spec:
   defaultBackend:
     service:

@@ -3,6 +3,14 @@ kind: Ingress
 metadata:
   name: dapr
   namespace: dapr-system
+  annotations:
+    tailscale.com/experimental-forward-cluster-traffic-via-ingress: "true"
+    gethomepage.dev/description: Distributed Application Runtime
+    gethomepage.dev/enabled: "true"
+    gethomepage.dev/group: Services
+    gethomepage.dev/icon: si-dapr.png
+    gethomepage.dev/name: Dapr
+    gethomepage.dev/href: https://dapr.tahr-toad.ts.net
 spec:
   defaultBackend:
     service:
