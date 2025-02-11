@@ -10,7 +10,7 @@
       description: ArgoCD Dashboard
       widget:
         type: argocd
-        url: http://argocd.host.or.ip:port
+        url: https://argocd.tahr-toad.ts.net
         key: {{HOMEPAGE_VAR_ARGOCD_KEY}}
 
 - Global:
