@@ -1,5 +1,4 @@
 - Home:
-  - Services:
   - Calendar:
       widget:
         type: calendar
