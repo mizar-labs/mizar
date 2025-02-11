@@ -3,6 +3,14 @@ kind: Ingress
 metadata:
   name: octobot
   namespace: octobot
+  annotations:
+    tailscale.com/experimental-forward-cluster-traffic-via-ingress: "true"
+    gethomepage.dev/description: Crypto Trading Bot
+    gethomepage.dev/enabled: "true"
+    gethomepage.dev/group: Services
+    gethomepage.dev/icon: sh-octobot.png
+    gethomepage.dev/name: Octobot
+    gethomepage.dev/href: https://octobot.tahr-toad.ts.net
 spec:
   defaultBackend:
     service:

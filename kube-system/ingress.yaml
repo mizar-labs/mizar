@@ -3,6 +3,14 @@ kind: Ingress
 metadata:
   name: hubble
   namespace: kube-system
+  annotations:
+    tailscale.com/experimental-forward-cluster-traffic-via-ingress: "true"
+    gethomepage.dev/description: Kubernetes Network
+    gethomepage.dev/enabled: "true"
+    gethomepage.dev/group: Services
+    gethomepage.dev/icon: cilium.png
+    gethomepage.dev/name: Hubble
+    gethomepage.dev/href: https://hubble.tahr-toad.ts.net
 spec:
   defaultBackend:
     service:
