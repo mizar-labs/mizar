@@ -10,7 +10,7 @@ spec:
       port: 80
       targetPort: http
   selector:
-    name: ollama
+    app.kubernetes.io/name: ollama
   type: ClusterIP
   sessionAffinity: None
   ipFamilies:
