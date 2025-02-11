@@ -54,39 +54,39 @@
       widget:
         type: traefik
         url: https://traefik.tahr-toad.ts.net
-- DNS:
-  - NextDNS:
-      href: https://my.nextdns.io/
-      icon: nextdns.png
-      description: DNS Management
-      widgets:
-        - type: nextdns
-          profile: {{HOMEPAGE_VAR_NEXTDNS_PROFILE_MAIN}}
-          key: {{HOMEPAGE_VAR_NEXTDNS_KEY}}
-        - type: nextdns
-          profile: {{HOMEPAGE_VAR_NEXTDNS_PROFILE_KIDS}}
-          key: {{HOMEPAGE_VAR_NEXTDNS_KEY}}
-        - type: nextdns
-          profile: {{HOMEPAGE_VAR_NEXTDNS_PROFILE_DMZ}}
-          key: {{HOMEPAGE_VAR_NEXTDNS_KEY}}
-        - type: nextdns
-          profile: {{HOMEPAGE_VAR_NEXTDNS_PROFILE_SERVERS}}
-          key: {{HOMEPAGE_VAR_NEXTDNS_KEY}}
-        - type: nextdns
-          profile: {{HOMEPAGE_VAR_NEXTDNS_PROFILE_VULCAN}}
-          key: {{HOMEPAGE_VAR_NEXTDNS_KEY}}
-        - type: nextdns
-          profile: {{HOMEPAGE_VAR_NEXTDNS_PROFILE_MR}}
-          key: {{HOMEPAGE_VAR_NEXTDNS_KEY}}
-        - type: nextdns
-          profile: {{HOMEPAGE_VAR_NEXTDNS_PROFILE_UNIFI}}
-          key: {{HOMEPAGE_VAR_NEXTDNS_KEY}}
-        - type: nextdns
-          profile: {{HOMEPAGE_VAR_NEXTDNS_PROFILE_WAN}}
-          key: {{HOMEPAGE_VAR_NEXTDNS_KEY}}
-        - type: nextdns
-          profile: {{HOMEPAGE_VAR_NEXTDNS_PROFILE_IOT}}
-          key: {{HOMEPAGE_VAR_NEXTDNS_KEY}}
+  - DNS:
+    - NextDNS:
+        href: https://my.nextdns.io/
+        icon: nextdns.png
+        description: DNS Management
+        widgets:
+          - type: nextdns
+            profile: {{HOMEPAGE_VAR_NEXTDNS_PROFILE_MAIN}}
+            key: {{HOMEPAGE_VAR_NEXTDNS_KEY}}
+          - type: nextdns
+            profile: {{HOMEPAGE_VAR_NEXTDNS_PROFILE_KIDS}}
+            key: {{HOMEPAGE_VAR_NEXTDNS_KEY}}
+          - type: nextdns
+            profile: {{HOMEPAGE_VAR_NEXTDNS_PROFILE_DMZ}}
+            key: {{HOMEPAGE_VAR_NEXTDNS_KEY}}
+          - type: nextdns
+            profile: {{HOMEPAGE_VAR_NEXTDNS_PROFILE_SERVERS}}
+            key: {{HOMEPAGE_VAR_NEXTDNS_KEY}}
+          - type: nextdns
+            profile: {{HOMEPAGE_VAR_NEXTDNS_PROFILE_VULCAN}}
+            key: {{HOMEPAGE_VAR_NEXTDNS_KEY}}
+          - type: nextdns
+            profile: {{HOMEPAGE_VAR_NEXTDNS_PROFILE_MR}}
+            key: {{HOMEPAGE_VAR_NEXTDNS_KEY}}
+          - type: nextdns
+            profile: {{HOMEPAGE_VAR_NEXTDNS_PROFILE_UNIFI}}
+            key: {{HOMEPAGE_VAR_NEXTDNS_KEY}}
+          - type: nextdns
+            profile: {{HOMEPAGE_VAR_NEXTDNS_PROFILE_WAN}}
+            key: {{HOMEPAGE_VAR_NEXTDNS_KEY}}
+          - type: nextdns
+            profile: {{HOMEPAGE_VAR_NEXTDNS_PROFILE_IOT}}
+            key: {{HOMEPAGE_VAR_NEXTDNS_KEY}}
 
 
 
