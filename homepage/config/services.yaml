@@ -1,19 +1,19 @@
-- Tier 1:
+- Next Up:
   - Calendar:
-      widget:
-        type: calendar
-        firstDayInWeek: sunday # optional - defaults to monday
-        view: monthly # optional - possible values monthly, agenda
-        maxEvents: 10 # optional - defaults to 10
-        showTime: true # optional - show time for event happening today - defaults to false
-        timezone: America/Chicago # optional and only when timezone is not detected properly (slightly slower performance) - force timezone for ical events (if it's the same - no change, if missing or different in ical - will be converted to this timezone)
-        integrations: # optional
-          - type: ical # Show calendar events from another service
-            url: {{HOMEPAGE_VAR_ICAL_URL}} # required - url to ical file
-            name: My Events # required - name for these calendar events
-            color: zinc # optional - defaults to pre-defined color for the service (zinc for ical)
-            params: # optional - additional params for the service
-              showName: true # optional - show name before event title in event line - defaults to false
+    widget:
+      type: calendar
+      firstDayInWeek: sunday # optional - defaults to monday
+      view: monthly # optional - possible values monthly, agenda
+      maxEvents: 10 # optional - defaults to 10
+      showTime: true # optional - show time for event happening today - defaults to false
+      timezone: America/Chicago # optional and only when timezone is not detected properly (slightly slower performance) - force timezone for ical events (if it's the same - no change, if missing or different in ical - will be converted to this timezone)
+      integrations: # optional
+        - type: ical # Show calendar events from another service
+          url: {{HOMEPAGE_VAR_ICAL_URL}} # required - url to ical file
+          name: My Events # required - name for these calendar events
+          color: zinc # optional - defaults to pre-defined color for the service (zinc for ical)
+          params: # optional - additional params for the service
+            showName: true # optional - show name before event title in event line - defaults to false
   - Agenda:
       widget:
         type: calendar
@@ -28,104 +28,30 @@
             color: zinc # optional - defaults to pre-defined color for the service (zinc for ical)
             params: # optional - additional params for the service
               showName: true # optional - show name before event title in event line - defaults to false
-  - Operations:
-    - Proxmox:
-        href: https://pve.tahr-toad.ts.net:8006
-        icon: proxmox.png
-        widget:
-          type: proxmox
-          url: https://pve.tahr-toad.ts.net:8006
-          username: {{HOMEPAGE_VAR_PROXMOX_USERNAME}}
-          password: {{HOMEPAGE_VAR_PROXMOX_PASSWORD}}
-    - ArgoCD:
-        href: https://argocd.tahr-toad.ts.net
-        icon: argo-cd.png
-        description: ArgoCD Dashboard
-        widget:
-          type: argocd
-          url: https://argocd.tahr-toad.ts.net
-          key: {{HOMEPAGE_VAR_ARGOCD_KEY}}
-    - Traefik:
-        href: https://traefik.tahr-toad.ts.net
-        icon: traefik.png
-        description: Traefik Dashboard
-        widget:
-          type: traefik
-          url: https://traefik.tahr-toad.ts.net
-    - DNS:
-        - Main:
-            href: https://my.nextdns.io/
-            icon: nextdns.png
-            description: DNS Management
-            widget:
-              type: nextdns
-              profile: {{HOMEPAGE_VAR_NEXTDNS_PROFILE_MAIN}}
-              key: {{HOMEPAGE_VAR_NEXTDNS_KEY}}
-        - Kids:
-            href: https://my.nextdns.io/
-            icon: nextdns.png
-            description: DNS Management
-            widget:
-              type: nextdns
-              profile: {{HOMEPAGE_VAR_NEXTDNS_PROFILE_KIDS}}
-              key: {{HOMEPAGE_VAR_NEXTDNS_KEY}}
-        - DMZ:
-            href: https://my.nextdns.io/
-            icon: nextdns.png
-            description: DNS Management
-            widges:
-              type: nextdns
-              profile: {{HOMEPAGE_VAR_NEXTDNS_PROFILE_DMZ}}
-              key: {{HOMEPAGE_VAR_NEXTDNS_KEY}}
-        - Servers:
-            href: https://my.nextdns.io/
-            icon: nextdns.png
-            description: DNS Management
-            widget:
-              type: nextdns
-              profile: {{HOMEPAGE_VAR_NEXTDNS_PROFILE_SERVERS}}
-              key: {{HOMEPAGE_VAR_NEXTDNS_KEY}}
-        - Vulcan:
-            href: https://my.nextdns.io/
-            icon: nextdns.png
-            description: DNS Management
-            widget:
-              type: nextdns
-              profile: {{HOMEPAGE_VAR_NEXTDNS_PROFILE_VULCAN}}
-              key: {{HOMEPAGE_VAR_NEXTDNS_KEY}}
-        - MR:
-            href: https://my.nextdns.io/
-            icon: nextdns.png
-            description: DNS Management
-            widget:
-              type: nextdns
-              profile: {{HOMEPAGE_VAR_NEXTDNS_PROFILE_MR}}
-              key: {{HOMEPAGE_VAR_NEXTDNS_KEY}}
-        - Unifi Network:
-            href: https://my.nextdns.io/
-            icon: nextdns.png
-            description: DNS Management
-            widget:
-              type: nextdns
-              profile: {{HOMEPAGE_VAR_NEXTDNS_PROFILE_UNIFI}}
-              key: {{HOMEPAGE_VAR_NEXTDNS_KEY}}
-        - WAN:
-            href: https://my.nextdns.io/
-            icon: nextdns.png
-            description: DNS Management
-            widget:
-              type: nextdns
-              profile: {{HOMEPAGE_VAR_NEXTDNS_PROFILE_WAN}}
-              key: {{HOMEPAGE_VAR_NEXTDNS_KEY}}
-        - IOT:
-            href: https://my.nextdns.io/
-            icon: nextdns.png
-            description: DNS Management
-            widget:
-              type: nextdns
-              profile: {{HOMEPAGE_VAR_NEXTDNS_PROFILE_IOT}}
-              key: {{HOMEPAGE_VAR_NEXTDNS_KEY}}
-
+- Operations:
+  - Proxmox:
+      href: https://pve.tahr-toad.ts.net:8006
+      icon: proxmox.png
+      widget:
+        type: proxmox
+        url: https://pve.tahr-toad.ts.net:8006
+        username: {{HOMEPAGE_VAR_PROXMOX_USERNAME}}
+        password: {{HOMEPAGE_VAR_PROXMOX_PASSWORD}}
+  - ArgoCD:
+      href: https://argocd.tahr-toad.ts.net
+      icon: argo-cd.png
+      description: ArgoCD Dashboard
+      widget:
+        type: argocd
+        url: https://argocd.tahr-toad.ts.net
+        key: {{HOMEPAGE_VAR_ARGOCD_KEY}}
+  - Traefik:
+      href: https://traefik.tahr-toad.ts.net
+      icon: traefik.png
+      description: Traefik Dashboard
+      widget:
+        type: traefik
+        url: https://traefik.tahr-toad.ts.net
 
 
 
