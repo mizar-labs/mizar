@@ -10,7 +10,7 @@ spec:
       port: 80
       targetPort: 5001
   selector:
-    io.kompose.service: octobot
+    app.kubernetes.io/name: octobot
   type: ClusterIP
   sessionAffinity: None
   ipFamilies:

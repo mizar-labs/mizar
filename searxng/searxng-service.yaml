@@ -2,7 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    io.kompose.service: searxng
+    app.kubernetes.io/name: searxng
   name: searxng
   namespace: searxng
 spec:
@@ -11,4 +11,4 @@ spec:
       port: 8080
       targetPort: web
   selector:
-    io.kompose.service: searxng
+    app.kubernetes.io/name: searxng

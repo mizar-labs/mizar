@@ -10,7 +10,7 @@ spec:
       port: 8080
       targetPort: http
   selector:
-    io.kompose.service: glance
+    app.kubernetes.io/name: glance
   type: ClusterIP
   sessionAffinity: None
   ipFamilies:

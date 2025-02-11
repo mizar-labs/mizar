@@ -4,16 +4,16 @@ metadata:
   name: octobot
   namespace: octobot
   labels:
-    io.kompose.service: octobot
+    app.kubernetes.io/name: octobot
 spec:
   replicas: 1
   selector:
     matchLabels:
-      io.kompose.service: octobot
+      app.kubernetes.io/name: octobot
   template:
     metadata:
       labels:
-        io.kompose.service: octobot
+        app.kubernetes.io/name: octobot
     spec:
       volumes:
         - name: octobot-claim0
