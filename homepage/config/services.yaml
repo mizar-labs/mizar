@@ -1,3 +1,9 @@
+- Links:
+    - Ollama:
+        icon: ollama.png
+        href: https://ollama.tahr-toad.ts.net
+        description: Ollama API
+
 - Home:
   - Calendar:
       widget:
@@ -14,6 +20,8 @@
             color: zinc # optional - defaults to pre-defined color for the service (zinc for ical)
             params: # optional - additional params for the service
               showName: true # optional - show name before event title in event line - defaults to false
+
+- Operation:
   - NextDNS:
       href: https://my.nextdns.io/
       description: DNS Management
@@ -42,9 +50,3 @@
         type: argocd
         url: https://argocd.tahr-toad.ts.net
         key: {{HOMEPAGE_VAR_ARGOCD_KEY}}
-
-- Links:
-  - Ollama:
-      icon: ollama.png
-      href: https://ollama.tahr-toad.ts.net
-      description: Ollama API
