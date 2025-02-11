@@ -1,19 +1,19 @@
-- Cluster:
-  - Load Balancer:
-      href: https://traefik.tahr-toad.ts.net
-      description: Traefik Dashboard
+- Home:
+  - Calendar:
       widget:
-        type: traefik
-        url: https://traefik.tahr-toad.ts.net
-  - ArgoCD:
-      href: https://argocd.tahr-toad.ts.net
-      description: ArgoCD Dashboard
-      widget:
-        type: argocd
-        url: https://argocd.tahr-toad.ts.net
-        key: {{HOMEPAGE_VAR_ARGOCD_KEY}}
-
-- Global:
+        type: calendar
+        firstDayInWeek: sunday # optional - defaults to monday
+        view: monthly # optional - possible values monthly, agenda
+        maxEvents: 10 # optional - defaults to 10
+        showTime: true # optional - show time for event happening today - defaults to false
+        timezone: America/Chicago # optional and only when timezone is not detected properly (slightly slower performance) - force timezone for ical events (if it's the same - no change, if missing or different in ical - will be converted to this timezone)
+        integrations: # optional
+          - type: ical # Show calendar events from another service
+            url: {{HOMEPAGE_VAR_ICAL_URL}} # required - url to ical file
+            name: My Events # required - name for these calendar events
+            color: zinc # optional - defaults to pre-defined color for the service (zinc for ical)
+            params: # optional - additional params for the service
+              showName: true # optional - show name before event title in event line - defaults to false
   - NextDNS:
       href: https://my.nextdns.io/
       description: DNS Management
@@ -35,21 +35,10 @@
       widget:
         type: traefik
         url: https://traefik.tahr-toad.ts.net
-
-
-- Home:
-  - Calendar:
+  - ArgoCD:
+      href: https://argocd.tahr-toad.ts.net
+      description: ArgoCD Dashboard
       widget:
-        type: calendar
-        firstDayInWeek: sunday # optional - defaults to monday
-        view: monthly # optional - possible values monthly, agenda
-        maxEvents: 10 # optional - defaults to 10
-        showTime: true # optional - show time for event happening today - defaults to false
-        timezone: America/Chicago # optional and only when timezone is not detected properly (slightly slower performance) - force timezone for ical events (if it's the same - no change, if missing or different in ical - will be converted to this timezone)
-        integrations: # optional
-          - type: ical # Show calendar events from another service
-            url: {{HOMEPAGE_VAR_ICAL_URL}} # required - url to ical file
-            name: My Events # required - name for these calendar events
-            color: zinc # optional - defaults to pre-defined color for the service (zinc for ical)
-            params: # optional - additional params for the service
-              showName: true # optional - show name before event title in event line - defaults to false
+        type: argocd
+        url: https://argocd.tahr-toad.ts.net
+        key: {{HOMEPAGE_VAR_ARGOCD_KEY}}
