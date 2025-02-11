@@ -52,7 +52,7 @@
       widget:
         type: traefik
         url: https://traefik.tahr-toad.ts.net
-DNS:
+- DNS:
   - Main:
       href: https://my.nextdns.io/
       icon: nextdns.png
