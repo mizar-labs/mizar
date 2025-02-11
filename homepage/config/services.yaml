@@ -16,6 +16,13 @@
               showName: true # optional - show name before event title in event line - defaults to false
 
 - Operation:
+  - ArgoCD:
+      href: https://argocd.tahr-toad.ts.net
+      description: ArgoCD Dashboard
+      widget:
+        type: argocd
+        url: https://argocd.tahr-toad.ts.net
+        key: {{HOMEPAGE_VAR_ARGOCD_KEY}}
   - NextDNS:
       href: https://my.nextdns.io/
       description: DNS Management
@@ -37,10 +44,3 @@
       widget:
         type: traefik
         url: https://traefik.tahr-toad.ts.net
-  - ArgoCD:
-      href: https://argocd.tahr-toad.ts.net
-      description: ArgoCD Dashboard
-      widget:
-        type: argocd
-        url: https://argocd.tahr-toad.ts.net
-        key: {{HOMEPAGE_VAR_ARGOCD_KEY}}
