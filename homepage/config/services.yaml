@@ -42,3 +42,9 @@
         type: argocd
         url: https://argocd.tahr-toad.ts.net
         key: {{HOMEPAGE_VAR_ARGOCD_KEY}}
+
+- Links:
+  - Ollama:
+      icon: ollama.png
+      href: https://ollama.tahr-toad.ts.net
+      description: Ollama API
