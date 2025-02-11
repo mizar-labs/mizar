@@ -55,79 +55,79 @@
       widget:
         type: traefik
         url: https://traefik.tahr-toad.ts.net
-  - DNS:
-    - Main:
-        href: https://my.nextdns.io/
-        icon: nextdns.png
-        description: DNS Management
-        widget:
-          type: nextdns
-          profile: {{HOMEPAGE_VAR_NEXTDNS_PROFILE_MAIN}}
-          key: {{HOMEPAGE_VAR_NEXTDNS_KEY}}
-    - Kids:
-        href: https://my.nextdns.io/
-        icon: nextdns.png
-        description: DNS Management
-        widget:
-          type: nextdns
-          profile: {{HOMEPAGE_VAR_NEXTDNS_PROFILE_KIDS}}
-          key: {{HOMEPAGE_VAR_NEXTDNS_KEY}}
-    - DMZ:
-        href: https://my.nextdns.io/
-        icon: nextdns.png
-        description: DNS Management
-        widges:
-          type: nextdns
-          profile: {{HOMEPAGE_VAR_NEXTDNS_PROFILE_DMZ}}
-          key: {{HOMEPAGE_VAR_NEXTDNS_KEY}}
-    - Servers:
-        href: https://my.nextdns.io/
-        icon: nextdns.png
-        description: DNS Management
-        widget:
-          type: nextdns
-          profile: {{HOMEPAGE_VAR_NEXTDNS_PROFILE_SERVERS}}
-          key: {{HOMEPAGE_VAR_NEXTDNS_KEY}}
-    - Vulcan:
-        href: https://my.nextdns.io/
-        icon: nextdns.png
-        description: DNS Management
-        widget:
-          type: nextdns
-          profile: {{HOMEPAGE_VAR_NEXTDNS_PROFILE_VULCAN}}
-          key: {{HOMEPAGE_VAR_NEXTDNS_KEY}}
-    - MR:
-        href: https://my.nextdns.io/
-        icon: nextdns.png
-        description: DNS Management
-        widget:
-          type: nextdns
-          profile: {{HOMEPAGE_VAR_NEXTDNS_PROFILE_MR}}
-          key: {{HOMEPAGE_VAR_NEXTDNS_KEY}}
-    - Unifi Network:
-        href: https://my.nextdns.io/
-        icon: nextdns.png
-        description: DNS Management
-        widget:
-          type: nextdns
-          profile: {{HOMEPAGE_VAR_NEXTDNS_PROFILE_UNIFI}}
-          key: {{HOMEPAGE_VAR_NEXTDNS_KEY}}
-    - WAN:
-        href: https://my.nextdns.io/
-        icon: nextdns.png
-        description: DNS Management
-        widget:
-          type: nextdns
-          profile: {{HOMEPAGE_VAR_NEXTDNS_PROFILE_WAN}}
-          key: {{HOMEPAGE_VAR_NEXTDNS_KEY}}
-    - IOT:
-        href: https://my.nextdns.io/
-        icon: nextdns.png
-        description: DNS Management
-        widget:
-          type: nextdns
-          profile: {{HOMEPAGE_VAR_NEXTDNS_PROFILE_IOT}}
-          key: {{HOMEPAGE_VAR_NEXTDNS_KEY}}
+- DNS:
+  - Main:
+      href: https://my.nextdns.io/
+      icon: nextdns.png
+      description: DNS Management
+      widget:
+        type: nextdns
+        profile: {{HOMEPAGE_VAR_NEXTDNS_PROFILE_MAIN}}
+        key: {{HOMEPAGE_VAR_NEXTDNS_KEY}}
+  - Kids:
+      href: https://my.nextdns.io/
+      icon: nextdns.png
+      description: DNS Management
+      widget:
+        type: nextdns
+        profile: {{HOMEPAGE_VAR_NEXTDNS_PROFILE_KIDS}}
+        key: {{HOMEPAGE_VAR_NEXTDNS_KEY}}
+  - DMZ:
+      href: https://my.nextdns.io/
+      icon: nextdns.png
+      description: DNS Management
+      widges:
+        type: nextdns
+        profile: {{HOMEPAGE_VAR_NEXTDNS_PROFILE_DMZ}}
+        key: {{HOMEPAGE_VAR_NEXTDNS_KEY}}
+  - Servers:
+      href: https://my.nextdns.io/
+      icon: nextdns.png
+      description: DNS Management
+      widget:
+        type: nextdns
+        profile: {{HOMEPAGE_VAR_NEXTDNS_PROFILE_SERVERS}}
+        key: {{HOMEPAGE_VAR_NEXTDNS_KEY}}
+  - Vulcan:
+      href: https://my.nextdns.io/
+      icon: nextdns.png
+      description: DNS Management
+      widget:
+        type: nextdns
+        profile: {{HOMEPAGE_VAR_NEXTDNS_PROFILE_VULCAN}}
+        key: {{HOMEPAGE_VAR_NEXTDNS_KEY}}
+  - MR:
+      href: https://my.nextdns.io/
+      icon: nextdns.png
+      description: DNS Management
+      widget:
+        type: nextdns
+        profile: {{HOMEPAGE_VAR_NEXTDNS_PROFILE_MR}}
+        key: {{HOMEPAGE_VAR_NEXTDNS_KEY}}
+  - Unifi Network:
+      href: https://my.nextdns.io/
+      icon: nextdns.png
+      description: DNS Management
+      widget:
+        type: nextdns
+        profile: {{HOMEPAGE_VAR_NEXTDNS_PROFILE_UNIFI}}
+        key: {{HOMEPAGE_VAR_NEXTDNS_KEY}}
+  - WAN:
+      href: https://my.nextdns.io/
+      icon: nextdns.png
+      description: DNS Management
+      widget:
+        type: nextdns
+        profile: {{HOMEPAGE_VAR_NEXTDNS_PROFILE_WAN}}
+        key: {{HOMEPAGE_VAR_NEXTDNS_KEY}}
+  - IOT:
+      href: https://my.nextdns.io/
+      icon: nextdns.png
+      description: DNS Management
+      widget:
+        type: nextdns
+        profile: {{HOMEPAGE_VAR_NEXTDNS_PROFILE_IOT}}
+        key: {{HOMEPAGE_VAR_NEXTDNS_KEY}}
 
 
 
