@@ -53,9 +53,6 @@
           type: traefik
           url: https://traefik.tahr-toad.ts.net
 
-
-- Operation:
-
 - DNS:
   - Main:
       href: https://my.nextdns.io/
