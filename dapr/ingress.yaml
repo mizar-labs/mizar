@@ -8,7 +8,7 @@ metadata:
     gethomepage.dev/description: Distributed Application Runtime
     gethomepage.dev/enabled: "true"
     gethomepage.dev/group: Services
-    gethomepage.dev/icon: si-dapr.png
+    gethomepage.dev/icon: si-dapr.svg
     gethomepage.dev/name: Dapr
     gethomepage.dev/href: https://dapr.tahr-toad.ts.net
 spec:
