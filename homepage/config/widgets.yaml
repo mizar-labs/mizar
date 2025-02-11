@@ -4,15 +4,6 @@
     labels: true
     nodes: true
 
-- openweathermap:
-    label: Bryan
-    latitude: 30.677446
-    longitude: -96.330783
-    units: imperial
-    apiKey: {{HOMEPAGE_VAR_OPENWEATHERMAP_API_KEY}}
-    cache: 5 # Time in minutes to cache API responses, to stay within limits
-    format: # optional, Intl.NumberFormat options
-      maximumFractionDigits: 1
 
 - kubernetes:
     cluster:
@@ -27,19 +18,22 @@
       memory: true
       showLabel: true
 
-- resources:
-  backend: resources
-  expanded: true
-  cpu: true
-  memory: true
-  network: default
-
 - search:
     provider: custom
     url: https://search.tahr-toad.ts.net/search?q=
     target: _blank
     #suggestionUrl: https://ac.ecosia.org/autocomplete?type=list&q= # Optional
     #showSearchSuggestions: true # Optional
+
+- openweathermap:
+    label: Bryan
+    latitude: 30.677446
+    longitude: -96.330783
+    units: imperial
+    apiKey: {{HOMEPAGE_VAR_OPENWEATHERMAP_API_KEY}}
+    cache: 5 # Time in minutes to cache API responses, to stay within limits
+    format: # optional, Intl.NumberFormat options
+      maximumFractionDigits: 1
 
 - datetime:
     text_size: xl
