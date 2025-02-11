@@ -5,12 +5,6 @@ metadata:
   namespace: argocd
   annotations:
     tailscale.com/experimental-forward-cluster-traffic-via-ingress: "true"
-    gethomepage.dev/description: ArgoCD
-    gethomepage.dev/enabled: "true"
-    gethomepage.dev/group: Operation
-    gethomepage.dev/icon: argo-cd.png
-    gethomepage.dev/name: ArgoCD
-    gethomepage.dev/href: https://argocd.tahr-toad.ts.net
 spec:
   defaultBackend:
     service:

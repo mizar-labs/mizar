@@ -18,11 +18,28 @@
 - Operation:
   - ArgoCD:
       href: https://argocd.tahr-toad.ts.net
+      icon: argocd.png
       description: ArgoCD Dashboard
       widget:
         type: argocd
         url: https://argocd.tahr-toad.ts.net
         key: {{HOMEPAGE_VAR_ARGOCD_KEY}}
+  - Traefik:
+      href: https://traefik.tahr-toad.ts.net
+      icon: traefik.png
+      description: Traefik Dashboard
+      widget:
+        type: traefik
+        url: https://traefik.tahr-toad.ts.net
+  - Unifi:
+      href: https://udm.tahr-toad.ts.net
+      icon: unifi.png
+      description: Unifi Controller
+      widget:
+        type: unifi
+        url: https://udm.tahr-toad.ts.net
+        username: {{HOMEPAGE_VAR_UNIFI_USERNAME}}
+        password: {{HOMEPAGE_VAR_UNIFI_PASSWORD}}
   - NextDNS:
       href: https://my.nextdns.io/
       description: DNS Management
@@ -30,17 +47,5 @@
         type: nextdns
         profile: {{HOMEPAGE_VAR_NEXTDNS_PROFILE_MAIN}}
         key: {{HOMEPAGE_VAR_NEXTDNS_KEY}}
-  - Unifi:
-      href: https://udm.tahr-toad.ts.net
-      description: Unifi Controller
-      widget:
-        type: unifi
-        url: https://udm.tahr-toad.ts.net
-        username: {{HOMEPAGE_VAR_UNIFI_USERNAME}}
-        password: {{HOMEPAGE_VAR_UNIFI_PASSWORD}}
-  - Traefik:
-      href: https://traefik.tahr-toad.ts.net
-      description: Traefik Dashboard
-      widget:
-        type: traefik
-        url: https://traefik.tahr-toad.ts.net
+
+

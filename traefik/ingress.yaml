@@ -5,12 +5,6 @@ metadata:
   namespace: traefik
   annotations:
     tailscale.com/experimental-forward-cluster-traffic-via-ingress: "true"
-    gethomepage.dev/description: Traefik Dashboard
-    gethomepage.dev/enabled: "true"
-    gethomepage.dev/group: Operation
-    gethomepage.dev/icon: traefik.png
-    gethomepage.dev/name: Traefik
-    gethomepage.dev/href: https://traefik.tahr-toad.ts.net
 spec:
   defaultBackend:
     service:
