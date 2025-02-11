@@ -1,2 +1,4 @@
 providers:
   finnhub: {{HOMEPAGE_VAR_FINNHUB_API_KEY}}
+  longhorn:
+    url: https://longhorn.tahr-toad.ts.net
