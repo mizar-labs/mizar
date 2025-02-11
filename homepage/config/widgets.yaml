@@ -4,11 +4,15 @@
     labels: true
     nodes: true
 
-- datetime:
-    text_size: xl
-    format:
-      timeStyle: long
-      dateStyle: long
+- openweathermap:
+    label: Bryan
+    latitude: 30.677446
+    longitude: -96.330783
+    units: imperial
+    apiKey: {{HOMEPAGE_VAR_OPENWEATHERMAP_API_KEY}}
+    cache: 5 # Time in minutes to cache API responses, to stay within limits
+    format: # optional, Intl.NumberFormat options
+      maximumFractionDigits: 1
 
 - kubernetes:
     cluster:
@@ -23,32 +27,25 @@
       memory: true
       showLabel: true
 
-- openweathermap:
-    label: Bryan
-    latitude: 30.677446
-    longitude: -96.330783
-    units: imperial
-    apiKey: {{HOMEPAGE_VAR_OPENWEATHERMAP_API_KEY}}
-    cache: 5 # Time in minutes to cache API responses, to stay within limits
-    format: # optional, Intl.NumberFormat options
-      maximumFractionDigits: 1
-
-- openmeteo:
-    label: Bryan # optional
-    latitude: 30.677446
-    longitude: -96.330783
-    timezone: America/Chicago # optional
-    units: imperial # or imperial
-    cache: 5 # Time in minutes to cache API responses, to stay within limits
-    format: # optional, Intl.NumberFormat options
-      maximumFractionDigits: 1
-
 - resources:
   backend: resources
   expanded: true
   cpu: true
   memory: true
   network: default
+
+- search:
+    provider: custom
+    url: https://search.tahr-toad.ts.net/search?q=
+    target: _blank
+    #suggestionUrl: https://ac.ecosia.org/autocomplete?type=list&q= # Optional
+    #showSearchSuggestions: true # Optional
+
+- datetime:
+    text_size: xl
+    format:
+      timeStyle: long
+      dateStyle: long
 
 - stocks:
     provider: finnhub
@@ -61,11 +58,3 @@
       - GME
       - AMC
       - NVDA
-
-- search:
-    provider: custom
-    url: https://search.tahr-toad.ts.net/search?q=
-    target: _blank
-    #suggestionUrl: https://ac.ecosia.org/autocomplete?type=list&q= # Optional
-    #showSearchSuggestions: true # Optional
-
