@@ -3,6 +3,14 @@ kind: Ingress
 metadata:
   name: open-webui
   namespace: open-webui
+  annotations:
+    tailscale.com/experimental-forward-cluster-traffic-via-ingress: "true"
+    gethomepage.dev/description: AI Web Interface
+    gethomepage.dev/enabled: "true"
+    gethomepage.dev/group: Services
+    gethomepage.dev/icon: open-webui.png
+    gethomepage.dev/name: Open WebUI
+    gethomepage.dev/href: https://ai.tahr-toad.ts.net
 spec:
   defaultBackend:
     service:
