@@ -4,16 +4,16 @@ metadata:
   name: glance
   namespace: glance
   labels:
-    io.kompose.service: glance
+    app.kubernetes.io/name: glance
 spec:
   replicas: 1
   selector:
     matchLabels:
-      io.kompose.service: glance
+      app.kubernetes.io/name: glance
   template:
     metadata:
       labels:
-        io.kompose.service: glance
+        app.kubernetes.io/name: glance
     spec:
       volumes:
         - name: glance-config
