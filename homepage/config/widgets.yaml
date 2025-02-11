@@ -41,8 +41,11 @@
     nodes: true
 
 - search:
-    provider: duckduckgo
+    provider: custom
+    url: https://search.tahr-toad.ts.net/search?q=
     target: _blank
+    #suggestionUrl: https://ac.ecosia.org/autocomplete?type=list&q= # Optional
+    #showSearchSuggestions: true # Optional
 - stocks:
     provider: finnhub
     color: true # optional, defaults to true
