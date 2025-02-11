@@ -15,13 +15,19 @@
         profile: {{HOMEPAGE_VAR_NEXTDNS_PROFILE_MAIN}}
         key: {{HOMEPAGE_VAR_NEXTDNS_KEY}}
   - Unifi:
-      href: https://unifi.tahr-toad.ts.net
+      href: https://udm.tahr-toad.ts.net
       description: Unifi Controller
       widget:
         type: unifi
         url: https://udm.tahr-toad.ts.net
         username: {{HOMEPAGE_VAR_UNIFI_USERNAME}}
         password: {{HOMEPAGE_VAR_UNIFI_PASSWORD}}
+  - Traefik:
+      href: https://traefik.tahr-toad.ts.net
+      description: Traefik Dashboard
+      widget:
+        type: traefik
+        url: https://traefik.tahr-toad.ts.net
 
 
 - My Third Group:
