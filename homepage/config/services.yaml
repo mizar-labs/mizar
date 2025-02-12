@@ -52,10 +52,13 @@
       widget:
         type: traefik
         url: https://traefik.tahr-toad.ts.net
-  - Digital Tuner:
+  - HDHomeRun:
+      icon: hdhomerun.png
+      href: {{HOMEPAGE_VAR_HDHOMERUN_URL}}
+      description: Digital TV Tuner
       widget:
         type: hdhomerun
-        provider: hdhomerun
+        url: {{HOMEPAGE_VAR_HDHOMERUN_URL}}
 
 
 
