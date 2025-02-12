@@ -1,5 +1,7 @@
 providers:
   finnhub: {{HOMEPAGE_VAR_FINNHUB_API_KEY}}
+  hdhomerun: {{HOMEPAGE_VAR_HDHOMERUN_URL}}
+  plex: {{HOMEPAGE_VAR_PLEX_TOKEN}}
   longhorn:
     url: https://longhorn.tahr-toad.ts.net
 layout:
