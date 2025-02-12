@@ -1,0 +1,45 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: plex
+  namespace: argocd
+spec:
+  destination:
+    namespace: plex
+    server: https://kubernetes.default.svc
+  source:
+    repoURL: https://raw.githubusercontent.com/plexinc/pms-docker/gh-pages
+    targetRevision: 0.8.0
+    chart: plex-media-server
+    helm:
+      releaseName: plex
+      values: |
+        nameOverride: plex
+        ingress:
+          enabled: true
+          url: https://plex
+          ingressClassName: tailscale
+          annotations:
+            tailscale.com/experimental-forward-cluster-traffic-via-ingress: "true"
+            tailscale.com/funnel: "true"
+            gethomepage.dev/description: Media Server
+            gethomepage.dev/enabled: "true"
+            gethomepage.dev/group: Operations
+            gethomepage.dev/icon: plex.png
+            gethomepage.dev/name: Plex
+            gethomepage.dev/href: https://plex.tahr-toad.ts.net
+        pms:
+          configStorage: 10Gi
+        resources:
+          requests:
+            cpu: 4
+            memory: 10Gi
+
+  sources: []
+  project: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
