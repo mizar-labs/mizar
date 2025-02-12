@@ -28,6 +28,10 @@ spec:
             gethomepage.dev/icon: plex.png
             gethomepage.dev/name: Plex
             gethomepage.dev/href: https://plex.tahr-toad.ts.net
+            gethomepage.dev/pod-selector: "app.kubernetes.io/name=plex"
+            gethomepage.dev/widget.type: "plex"
+            gethomepage.dev/widget.url: "https://plex.tahr-toad.ts.net"
+            gethomepage.dev/widget.provider: "plex"
         pms:
           configStorage: 10Gi
         resources:

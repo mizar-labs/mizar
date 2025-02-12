@@ -52,6 +52,10 @@
       widget:
         type: traefik
         url: https://traefik.tahr-toad.ts.net
+  - Digital Tuner:
+      widget:
+        type: hdhomerun
+        provider: hdhomerun
 
 
 
