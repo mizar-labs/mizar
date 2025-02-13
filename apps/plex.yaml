@@ -38,6 +38,12 @@ spec:
           requests:
             cpu: 4
             memory: 10Gi
+        rclone:
+          enabled: true
+          configSecret: "rclone-config"
+          remotes:
+            - "proton:/plex"
+          readOnly: false
 
   sources: []
   project: default
