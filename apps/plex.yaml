@@ -15,6 +15,8 @@ spec:
       releaseName: plex
       values: |
         nameOverride: plex
+        image:
+          tag: "1.41.4.9463-630c9f557"
         ingress:
           enabled: true
           url: https://plex.tahr-toad.ts.net
