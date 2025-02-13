@@ -40,6 +40,8 @@ spec:
             memory: 10Gi
         rclone:
           enabled: true
+          image:
+            tag: "1.69"
           configSecret: "rclone-config"
           remotes:
             - "proton:/plex"
