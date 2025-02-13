@@ -17,7 +17,7 @@ spec:
         nameOverride: plex
         ingress:
           enabled: true
-          url: https://plex
+          url: https://plex.tahr-toad.ts.net
           ingressClassName: tailscale
           annotations:
             tailscale.com/experimental-forward-cluster-traffic-via-ingress: "true"
