@@ -28,7 +28,7 @@ spec:
             primary: true
             ingressClassName: tailscale
             hosts:
-              - tautulli
+              host: tautulli
             tls:
               - hosts:
                   - tautulli
