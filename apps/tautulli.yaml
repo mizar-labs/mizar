@@ -8,7 +8,7 @@ spec:
     namespace: plex
     server: https://kubernetes.default.svc
   source:
-    repoURL: https://raw.githubusercontent.com/plexinc/pms-docker/gh-pages
+    repoURL: https://k8s-home-lab.github.io/helm-charts
     targetRevision: 12.0.0
     chart: tautulli
     helm:
