@@ -4,7 +4,7 @@ metadata:
   labels:
     io.kompose.service: tautulli-claim0
   name: tautulli-claim0
-  namespace: plex
+  namespace: tautulli
 spec:
   accessModes:
     - ReadWriteOnce
