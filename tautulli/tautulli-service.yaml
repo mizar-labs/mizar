@@ -10,7 +10,7 @@ metadata:
   namespace: tautulli
 spec:
   ports:
-    - name: "8181"
+    - name: http
       port: 8181
       targetPort: 8181
   selector:
