@@ -67,6 +67,14 @@
       widget:
         type: hdhomerun
         url: {{HOMEPAGE_VAR_HDHOMERUN_URL}}
+  - ChangeDetection.io:
+      icon: changedetection.png
+      href: https://change.tahr-toad.ts.net
+      description: Detect Changes on websites
+      widget:
+        type: changedetectionio
+        url: https://change.tahr-toad.ts.net
+        key: {{HOMEPAGE_VAR_CHANGEDETECTION_KEY}}
   - Tautulli:
       icon: tautulli.png
       href: https://tautulli.tahr-toad.ts.net
