@@ -67,6 +67,17 @@
       widget:
         type: hdhomerun
         url: {{HOMEPAGE_VAR_HDHOMERUN_URL}}
+  - Tautulli:
+      icon: tautulli.png
+      href: https://tautulli.tahr-toad.ts.net
+      description: Plex Stats
+      widget:
+        type: tautulli
+        url: https://tautulli.tahr-toad.ts.net
+        key: {{HOMEPAGE_VAR_TAUTULLI_KEY}}
+        enableUser: true
+        showEpisodeNumber: true
+        expandOneStreamToTwoRows: false
 
 
 
