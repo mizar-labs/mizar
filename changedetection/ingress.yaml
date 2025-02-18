@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: changedetection
+  namespace: changedetection
+  annotations:
+    tailscale.com/experimental-forward-cluster-traffic-via-ingress: "true"
+spec:
+  defaultBackend:
+    service:
+      name: changedetection
+      port:
+        name: http
+  ingressClassName: tailscale
+  tls:
+    - hosts:
+        - change
