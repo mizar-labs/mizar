@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app.kubernetes.io/name: kavita
+  name: kavita
+  namespace: kavita
+spec:
+  ports:
+    - name: http
+      port: 5000
+      targetPort: 5000
+  selector:
+    app.kubernetes.io/name: kavita
