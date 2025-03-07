@@ -58,7 +58,7 @@ spec:
               memory: 512Mi
 
         ingress:
-          enabled: true
+          enabled: false
           className: tailscale
           annotations:
             tailscale.com/experimental-forward-cluster-traffic-via-ingress: "true"
