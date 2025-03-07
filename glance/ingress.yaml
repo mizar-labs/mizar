@@ -5,6 +5,7 @@ metadata:
   namespace: glance
   annotations:
     tailscale.com/experimental-forward-cluster-traffic-via-ingress: "true"
+    tailscale.com/funnel: "true"
     gethomepage.dev/description: Smart Device HomePage
     gethomepage.dev/enabled: "true"
     gethomepage.dev/group: Services
