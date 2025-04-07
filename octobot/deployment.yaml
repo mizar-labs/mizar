@@ -30,7 +30,7 @@ spec:
             claimName: octobot-claim3
       containers:
         - name: octobot
-          image: drakkarsoftware/octobot:2.0.8
+          image: drakkarsoftware/octobot:2.0.9
           ports:
             - containerPort: 5001
               protocol: TCP
