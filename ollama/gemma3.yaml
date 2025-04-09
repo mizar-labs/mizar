@@ -2,6 +2,7 @@ apiVersion: ollama.ayaka.io/v1
 kind: Model
 metadata:
   name: gemma3
+  namespace: ollama
 spec:
   replicas: 1
   image: gemma3
