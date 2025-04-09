@@ -8,12 +8,9 @@ spec:
   image: gemma3
   imagePullPolicy: IfNotPresent
   resources:
-    limits:
-      nvidia.com/gpu: 1
     requests:
       cpu: 4
       memory: 8Gi
-      nvidia.com/gpu: 1
   storageClassName: longhorn
   affinity:
     nodeAffinity:
