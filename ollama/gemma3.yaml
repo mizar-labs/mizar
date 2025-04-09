@@ -1,0 +1,25 @@
+apiVersion: ollama.ayaka.io/v1
+kind: Model
+metadata:
+  name: gemma3
+spec:
+  replicas: 1
+  image: gemma3
+  imagePullPolicy: IfNotPresent
+  resources:
+    limits:
+      nvidia.com/gpu: 1
+    requests:
+      cpu: 4
+      memory: 8Gi
+      nvidia.com/gpu: 1
+  storageClassName: longhorn
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+          - matchExpressions:
+            - key: kubernetes.io/hostname
+              operator: In
+              values:
+                - k-w-3
