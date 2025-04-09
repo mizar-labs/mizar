@@ -4,15 +4,15 @@ metadata:
   name: gemma3
   namespace: ollama
 spec:
-  runtimeClassName: nvidia
   replicas: 1
   image: gemma3
   imagePullPolicy: IfNotPresent
   resources:
+    limits:
+      nvidia.com/gpu: 1
     requests:
       cpu: 4
       memory: 8Gi
+      nvidia.com/gpu: 1
   storageClassName: longhorn
-  nodeSelector:
-        kubernetes.io/hostname: k-w-3
-  
+
