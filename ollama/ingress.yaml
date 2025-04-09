@@ -14,9 +14,9 @@ metadata:
 spec:
   defaultBackend:
     service:
-      name: ollama
+      name: ollama-srv-d34b2b
       port:
-        name: http
+        name: ollama
   ingressClassName: tailscale
   tls:
     - hosts:
