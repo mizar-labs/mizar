@@ -15,5 +15,7 @@ spec:
       memory: 8Gi
       nvidia.com/gpu: 1
   storageClassName: longhorn
+  persistentVolume:
+    accessMode: ReadWriteOnce
   runtimeClassName: nvidia
 
