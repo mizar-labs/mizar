@@ -1,11 +1,11 @@
 apiVersion: ollama.ayaka.io/v1
 kind: Model
 metadata:
-  name: gemma3
+  name: deepseek
   namespace: ollama
 spec:
   replicas: 1
-  image: gemma3
+  image: deepseek-r1
   imagePullPolicy: IfNotPresent
   resources:
     limits:
@@ -16,4 +16,3 @@ spec:
   runtimeClassName: nvidia
   persistentVolumeClaim:
     size: 100Gi
-
