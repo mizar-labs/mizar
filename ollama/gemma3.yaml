@@ -5,8 +5,9 @@ metadata:
   namespace: ollama
 spec:
   tolerations:
-  - key: "nvidia.com/gpu"
-    operator: Exists
+  - key: "gpu"
+    operator: "Equal"
+    value: "true"
     effect: NoSchedule
   replicas: 1
   image: gemma3
