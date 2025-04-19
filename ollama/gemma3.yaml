@@ -4,14 +4,13 @@ metadata:
   name: gemma3
   namespace: ollama
 spec:
+  tolerations:
+  - key: "nvidia.com/gpu"
+    operator: Exists
+    effect: NoSchedule
   replicas: 1
   image: gemma3
   imagePullPolicy: IfNotPresent
-  resources:
-    limits:
-      nvidia.com/gpu: 1
-    requests:
-      nvidia.com/gpu: 1
   storageClassName: local-path
   runtimeClassName: nvidia
 
