@@ -8,8 +8,12 @@ spec:
     server: https://kubernetes.default.svc
   source:
     path: ollama
-    repoURL: https://github.com/mizar-labs/mizar
-    targetRevision: HEAD
+    repoURL: helm.openwebui.com
+    targetRevision: 0.6.4
+    chart: ollama
+    helm:
+      releaseName: ollama-stack
+      valuesFile: ../helm-values/open-webui.yaml
   project: default
   syncPolicy:
     automated:
