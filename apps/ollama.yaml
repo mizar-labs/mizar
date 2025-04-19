@@ -8,7 +8,7 @@ spec:
     server: https://kubernetes.default.svc
   source:
     path: ollama
-    repoURL: helm.openwebui.com
+    repoURL: https://helm.openwebui.com/
     targetRevision: 6.4.0
     chart: open-webui
     helm:
