@@ -25,7 +25,7 @@ spec:
             tailscale.com/experimental-forward-cluster-traffic-via-ingress: "true"
             tailscale.com/funnel: "true"
         pms:
-          configStorage: 100Gi
+          configStorage: 10Gi
         resources:
           requests:
             cpu: 4
