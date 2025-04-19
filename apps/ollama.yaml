@@ -9,7 +9,7 @@ spec:
   source:
     path: ollama
     repoURL: helm.openwebui.com
-    targetRevision: 0.6.4
+    targetRevision: 6.4.0
     chart: open-webui
     helm:
       releaseName: ollama-stack
