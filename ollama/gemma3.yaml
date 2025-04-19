@@ -15,5 +15,5 @@ spec:
   storageClassName: local-path
   runtimeClassName: nvidia
   persistentVolumeClaim:
-    size: 100Gi
+    size: 500Gi
 
