@@ -10,7 +10,7 @@ spec:
     path: ollama
     repoURL: helm.openwebui.com
     targetRevision: 0.6.4
-    chart: ollama
+    chart: open-webui
     helm:
       releaseName: ollama-stack
       valuesFile: ../helm-values/open-webui.yaml
