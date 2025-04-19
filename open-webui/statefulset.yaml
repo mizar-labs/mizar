@@ -49,6 +49,21 @@ spec:
           terminationMessagePolicy: File
           imagePullPolicy: IfNotPresent
           tty: true
+      affinity:
+      nodeAffinity:
+        requiredDuringSchedulingIgnoredDuringExecution:
+          nodeSelectorTerms:
+          - matchExpressions:
+            - key: kubernetes.io/hostname
+              operator: In
+              values:
+              - k-w-3
+      tolerations:
+        - key: gpu
+          opeator: Equal
+          value: true
+          effect: NoSchedule
+
       restartPolicy: Always
       terminationGracePeriodSeconds: 30
       dnsPolicy: ClusterFirst
