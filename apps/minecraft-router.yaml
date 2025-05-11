@@ -13,9 +13,10 @@ spec:
     chart: mc-router
     helm:
       values: |
-        minecraft:
-          type: LoadBalancer
-          port: 25565
+        services:
+          minecraft:
+            type: LoadBalancer
+            port: 25565
   sources: []
   project: default
   syncPolicy:
