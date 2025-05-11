@@ -1,0 +1,31 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: nirvana
+  namespace: argocd
+spec:
+  destination:
+    namespace: minecraft
+    server: https://kubernetes.default.svc
+  source:
+    repoURL: https://itzg.github.io/minecraft-server-charts/
+    targetRevision: 4.26.3
+    chart: minecraft
+    helm:
+      values: |
+        minecraftServer:
+          eula: "TRUE"
+          type: "AUTO_CURSEFORGE"
+          autoCurseForge:
+            apiKey:
+              existingSecret: "minecraft-common"
+              secretKey: CF_API_KEY
+               pageUrl: "https://www.curseforge.com/minecraft/modpacks/nirvana-vanilla"
+  sources: []
+  project: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
