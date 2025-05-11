@@ -15,8 +15,8 @@ spec:
       values: |
         minecraftServer:
           serviceAnnotations:
-           "mc-router.itzg.me/defaultServer": "true"
-           "mc-router.itzg.me/externalServerName": "vmc.scalar.cloud"
+           mc-router.itzg.me/defaultServer: "true"
+           mc-router.itzg.me/externalServerName: "vmc.scalar.cloud"
           eula: "TRUE"
           type: "AUTO_CURSEFORGE"
           autoCurseForge:
