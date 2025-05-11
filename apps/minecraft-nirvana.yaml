@@ -24,6 +24,10 @@ spec:
               existingSecret: "minecraft-common"
               secretKey: CF_API_KEY
             pageUrl: "https://www.curseforge.com/minecraft/modpacks/nirvana-vanilla/files/6506359"
+          ops: Strange_Quark,ServerGopher,night_watchmaker
+          motd: "Flint and Stteeeeeel!"
+          memory: 16384M
+
   sources: []
   project: default
   syncPolicy:
