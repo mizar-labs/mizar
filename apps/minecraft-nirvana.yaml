@@ -20,7 +20,7 @@ spec:
             apiKey:
               existingSecret: "minecraft-common"
               secretKey: CF_API_KEY
-              pageUrl: "https://www.curseforge.com/minecraft/modpacks/nirvana-vanilla"
+              pageUrl: "https://www.curseforge.com/minecraft/modpacks/nirvana-vanilla/files/6506359"
   sources: []
   project: default
   syncPolicy:
