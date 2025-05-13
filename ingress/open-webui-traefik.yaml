@@ -2,7 +2,7 @@ apiVersion: traefik.io/v1alpha1
 kind: IngressRoute
 metadata:
   name: open-webui
-  namespace: open-webui
+  namespace: ai
 spec:
   entryPoints:
     - websecure
@@ -22,7 +22,7 @@ apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
   name: open-webui
-  namespace: open-webui
+  namespace: ai
 spec:
   secretName: open-webui-tls
   dnsNames:
