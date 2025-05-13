@@ -7,7 +7,7 @@ ollama:
   fullnameOverride: "open-webui-ollama"
   gpu:
     # -- Enable GPU support for Ollama
-    enabled: false
+    enabled: true
     # -- GPU type (nvidia, amd, or true)
     type: nvidia
     # -- Number of GPUs to use
