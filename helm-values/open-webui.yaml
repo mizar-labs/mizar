@@ -24,7 +24,7 @@ ollama:
     size: 100Gi
   nodeSelector:
     # -- Node selector for Ollama pods
-    kubernetes.io/hostname: k-w-3
+    nvidia.com/gpu.family: turing
   tolerations:
     # -- Tolerations for Ollama pods
     - key: "gpu"
