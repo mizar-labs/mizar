@@ -3,6 +3,13 @@ kind: IngressRoute
 metadata:
   name: coroot
   namespace: coroot
+  annotations:
+    gethomepage.dev/href: "https://coroot.mizar.scalar.cloud"
+    gethomepage.dev/enabled: "true"
+    gethomepage.dev/description: Metrics
+    gethomepage.dev/group: Services
+    gethomepage.dev/app: coroot-coroot # optional, may be needed if app.kubernetes.io/name != ingress metadata.name
+    gethomepage.dev/name: Coroot
 spec:
   entryPoints:
     - websecure
