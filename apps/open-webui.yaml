@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: open-webui
+  namespace: argocd
+spec:
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: open-webui
+  source:
+    repoURL: https://helm.openwebui.com/
+    targetRevision: 6.13.0
+    chart: open-webui
+    helm:
+      releaseName: ai-flow
+      valuesFile: ../helm-values/open-webui.yaml
+  project: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
