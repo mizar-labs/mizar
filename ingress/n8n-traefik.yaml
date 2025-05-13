@@ -1,0 +1,32 @@
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: n8n
+  namespace: n8n
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - kind: Rule
+      match: Host(`n8n.mizar.scalar.cloud`)
+      priority: 10
+      services:
+        - name: n8n
+          kind: Service
+          namespace: n8n
+          port: http
+  tls:
+    secretName: n8n-tls
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: n8n
+  namespace: n8n
+spec:
+  secretName: n8n-tls
+  dnsNames:
+    - "n8n.mizar.scalar.cloud"
+  issuerRef:
+    name: le-staging
+    kind: ClusterIssuer
