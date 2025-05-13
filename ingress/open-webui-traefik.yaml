@@ -13,7 +13,7 @@ spec:
       services:
         - name: open-webui
           kind: Service
-          namespace: open-webui
+          namespace: ai
           port: http
   tls:
     secretName: open-webui-tls
