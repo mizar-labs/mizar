@@ -502,7 +502,7 @@ spec:
             enabled: true
             # -- GitHub OAuth client ID
             # @section -- GitHub OAuth configuration
-            clientId: Ov23li06pud5lzLadcQz"
+            clientId: Ov23li06pud5lzLadcQz
             # -- GitHub OAuth client secret (ignored if clientExistingSecret is set)
             # @section -- GitHub OAuth configuration
             clientSecret: ""
