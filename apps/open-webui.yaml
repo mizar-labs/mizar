@@ -71,6 +71,9 @@ spec:
           redis:
             # -- Enable redis installation
             enabled: true
+            # -- Network policy for redis
+            networkPolicy:
+              enabled: false
             # -- Redis name
             name: open-webui-redis
             # -- Redis labels
