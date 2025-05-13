@@ -72,8 +72,7 @@ spec:
             # -- Enable redis installation
             enabled: true
             # -- Network policy for redis
-            networkPolicy:
-              enabled: false
+
             # -- Redis name
             name: open-webui-redis
             # -- Redis labels
@@ -125,6 +124,9 @@ spec:
         redis-cluster:
           # -- Enable Redis installation
           enabled: true
+          # the network policy for redis
+          networkPolicy:
+            enabled: false
           # -- Redis cluster name (recommended to be 'open-webui-redis')
           # - In this case, redis url will be 'redis://open-webui-redis-master:6379/0' or 'redis://[:<password>@]open-webui-redis-master:6379/0'
           fullnameOverride: open-webui-redis
