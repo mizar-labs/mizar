@@ -364,6 +364,11 @@ spec:
                secretKeyRef:
                  name: open-webui
                  key: WEBUI_URL
+           - name: ENABLE_OAUTH_SIGNUP
+             valueFrom:
+               secretKeyRef:
+                 name: open-webui
+                 key: ENABLE_OAUTH_SIGNUP
           # - name: OLLAMA_DEBUG
           #   value: "1"
 
