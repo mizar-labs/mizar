@@ -1,19 +1,19 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: open-webui
+  name: ollama
   namespace: argocd
 spec:
   destination:
     server: https://kubernetes.default.svc
-    namespace: open-webui
+    namespace: ai
   source:
-    repoURL: https://helm.openwebui.com/
+    repoURL: https://otwld.github.io/ollama-helm/
     targetRevision: 6.13.0
-    chart: open-webui
+    chart: ollama
     helm:
-      releaseName: ai-flow
-      valuesFile: ../helm-values/open-webui.yaml
+      releaseName: prod
+      valuesFile: ../helm-values/ollama.yaml
   project: default
   syncPolicy:
     automated:
