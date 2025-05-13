@@ -8,7 +8,7 @@ spec:
     server: https://kubernetes.default.svc
     namespace: ai
   source:
-    repoURL: https://github.com/open-webui/helm-charts
+    repoURL: https://helm.openwebui.com/
     targetRevision: 6.13.0
     chart: open-webui
     helm:
