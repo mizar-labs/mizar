@@ -363,7 +363,7 @@ persistentVolume:
 
 # -- Node labels for pod assignment.
 nodeSelector:
-  kubernetes.io/hostname: k-w-3
+  kubernetes.io/hostname: "k-w-3"
 
 # -- Tolerations for pod assignment
 tolerations:
