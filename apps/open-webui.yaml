@@ -1,16 +1,16 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: ollama
+  name: open-webui
   namespace: argocd
 spec:
   destination:
     server: https://kubernetes.default.svc
     namespace: ai
   source:
-    repoURL: https://otwld.github.io/ollama-helm/
-    targetRevision: 1.16.0
-    chart: ollama
+    repoURL: https://github.com/open-webui/helm-charts
+    targetRevision: 6.13.0
+    chart: open-webui
     helm:
       releaseName: prod
       valuesObject:
