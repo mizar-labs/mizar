@@ -363,14 +363,10 @@ persistentVolume:
 
 # -- Node labels for pod assignment.
 nodeSelector:
-  kubernetes.io/hostname: "k-w-3"
+  nvidia.com/gpu.family: "turing"
 
 # -- Tolerations for pod assignment
-tolerations:
-  - key: "gpu"
-    operator: "Equal"
-    value: "yes"
-    effect: "NoSchedule"
+tolerations: []
 
 # -- Affinity for pod assignment
 affinity: {}
