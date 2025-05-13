@@ -8,7 +8,7 @@ spec:
     - websecure
   routes:
     - kind: Rule
-      match: Host(`search.mizar.scalar.cloud`)
+      match: Host(`search.scalar.cloud`)
       priority: 10
       services:
         - name: searxng
@@ -16,7 +16,7 @@ spec:
           namespace: searxng
           port: http
   tls:
-    secretName: searxng-tls
+    secretName: searxng-scalar-tls
 ---
 apiVersion: cert-manager.io/v1
 kind: Certificate
@@ -24,9 +24,9 @@ metadata:
   name: searxng
   namespace: searxng
 spec:
-  secretName: searxng-tls
+  secretName: searxng-scalar-tls
   dnsNames:
-    - "search.mizar.scalar.cloud"
+    - "search.scalar.cloud"
   issuerRef:
     name: le-prod
     kind: ClusterIssuer
