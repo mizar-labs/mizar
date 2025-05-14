@@ -3,6 +3,13 @@ kind: IngressRoute
 metadata:
   name: n8n
   namespace: n8n
+  annotations:
+    gethomepage.dev/description: Workflow Automation
+    gethomepage.dev/enabled: "true"
+    gethomepage.dev/group: Services
+    gethomepage.dev/icon: sh-n8n.png
+    gethomepage.dev/name: N8N
+    gethomepage.dev/href: https://n8n.mizar.scalar.cloud
 spec:
   entryPoints:
     - websecure
