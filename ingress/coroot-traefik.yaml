@@ -10,6 +10,7 @@ metadata:
     gethomepage.dev/group: Services
     gethomepage.dev/app: coroot-coroot # optional, may be needed if app.kubernetes.io/name != ingress metadata.name
     gethomepage.dev/name: Coroot
+    gethomepage.dev/pod-selector: "app.kubernetes.io/part-of=coroot"
 spec:
   entryPoints:
     - websecure
