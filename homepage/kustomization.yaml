@@ -3,7 +3,6 @@ namespace: homepage
 resources:
   - deployment.yaml
   - service.yaml
-  - ingress.yaml
   - role-bindings.yaml
   - service-account.yaml
 configMapGenerator:
