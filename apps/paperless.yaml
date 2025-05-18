@@ -35,7 +35,8 @@ spec:
           # -- Set the container timezone
           TZ: UTC
           PAPERLESS_URL: "https://docs.mizar.scalar.cloud"
-          # PAPERLESS_SECRET_KEY: ""
+          PAPERLESS_ADMIN_USER: "smiles"
+          PAPERLESS_ADMIN_PASSWORD: "changeme"
 
         service:
           # -- Configures service settings for the chart.
