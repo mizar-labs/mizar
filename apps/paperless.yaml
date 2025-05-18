@@ -8,7 +8,7 @@ spec:
     server: https://kubernetes.default.svc
     namespace: paperless
   source:
-    repoURL: ghcr.io/gabe565/charts/paperless-ngx
+    repoURL: ghcr.io/gabe565/charts
     targetRevision: 0.24.1
     chart: paperless-ngx
     helm:
