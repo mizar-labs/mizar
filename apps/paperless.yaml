@@ -34,6 +34,7 @@ spec:
         env:
           # -- Set the container timezone
           TZ: UTC
+          PAPERLESS_URL: "https://docs.mizar.scalar.cloud"
           # PAPERLESS_SECRET_KEY: ""
 
         service:
