@@ -9,8 +9,8 @@ spec:
   ignoreErrors: false
   metadata:
     - name: redisHost
-      value: discollama-prod-redis-master:6379
+      value: prod-redis-cluster:6379
     - name: redisPassword
       secretKeyRef:
-        name: discollama-prod-redis
+        name: prod-redis-cluster
         key: redis-password
