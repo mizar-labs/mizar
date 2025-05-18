@@ -68,7 +68,7 @@ spec:
             retain: true
             mountPath: /usr/src/paperless/data
             # storageClass: ""
-            # accessMode: ReadWriteOnce
+            accessMode: ReadWriteOnce
             size: 20Gi
           # -- Configure media volume settings for the chart under this key.
           # @default -- See [values.yaml](./values.yaml)
@@ -77,7 +77,7 @@ spec:
             retain: true
             mountPath: /usr/src/paperless/media
             # storageClass: ""
-            # accessMode: ReadWriteOnce
+            accessMode: ReadWriteOnce
             size: 20Gi
           # -- Configure export volume settings for the chart under this key.
           # @default -- See [values.yaml](./values.yaml)
@@ -86,7 +86,7 @@ spec:
             retain: true
             mountPath: /usr/src/paperless/export
             # storageClass: ""
-            # accessMode: ReadWriteOnce
+            accessMode: ReadWriteOnce
             size: 5Gi
           # -- Configure consume volume settings for the chart under this key.
           # @default -- See [values.yaml](./values.yaml)
@@ -95,7 +95,7 @@ spec:
             retain: true
             mountPath: /usr/src/paperless/consume
             # storageClass: ""
-            # accessMode: ReadWriteOnce
+            accessMode: ReadWriteOnce
             size: 4Gi
 
         # -- Enable and configure postgresql database subchart under this key.
