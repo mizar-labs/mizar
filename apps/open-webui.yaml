@@ -123,7 +123,7 @@ spec:
         # -- Deploys a Redis cluster with subchart 'redis' from bitnami
         redis-cluster:
           # -- Enable Redis installation
-          enabled: true
+          enabled: false
           # the network policy for redis
           networkPolicy:
             enabled: false
