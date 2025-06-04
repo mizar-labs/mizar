@@ -114,7 +114,8 @@ spec:
           # If true, a job will be run to create the secret if it doesn't exist
           generate: true
           # Additional annotations for the job creating the secret (if generate is true)
-          jobAnnotations: { }
+          jobAnnotations:
+            argocd.argoproj.io/hook: PreSync
 
         # This creates a headless service for metrics collection
         metrics:
