@@ -9,7 +9,7 @@ spec:
     namespace: matrix
   source:
     repoURL: ghcr.io/element-hq/ess-helm
-    targetRevision: 25.5.2-dev
+    targetRevision: 25.5.1
     chart: matrix-stack
     helm:
       releaseName: prod
