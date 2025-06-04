@@ -8,7 +8,7 @@ spec:
     server: https://kubernetes.default.svc
     namespace: matrix
   source:
-    repoURL: ghcr.io/element-hq/ess-helm/
+    repoURL: ghcr.io/element-hq/ess-helm
     targetRevision: 25.5.2-dev
     chart: matrix-stack
     helm:
