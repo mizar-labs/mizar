@@ -37,5 +37,5 @@ spec:
   dnsNames:
     - "web.matrix.scalar.cloud"
   issuerRef:
-    name: le-staging
+    name: le-prod
     kind: ClusterIssuer

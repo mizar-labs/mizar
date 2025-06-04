@@ -187,7 +187,7 @@ spec:
           config:
             default_server_config:
               m.homeserver:
-                base_url: https://web.matrix.scalar.cloud/
+                base_url: https://matrix.scalar.cloud/
                 server_name: Matrix
   project: default
   syncPolicy:
