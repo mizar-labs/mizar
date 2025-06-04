@@ -37,9 +37,9 @@ spec:
           # https://element-hq.github.io/synapse/latest/usage/configuration/config_documentation.html
 
           # This should point to your domain
-          server_name: "scalar.cloud"
-          public_baseurl: https://matrix.scalar.cloud/
-          web_client_location: https://matrix.scalar.cloud/
+          server_name: "matrix.scalar.cloud"
+          public_baseurl: https://web.matrix.scalar.cloud/
+          web_client_location: https://web.matrix.scalar.cloud/
 
           # Database configuration
           database:
@@ -56,9 +56,9 @@ spec:
           # Email configuration
           email:
             app_name: Matrix
-            client_base_url: https://matrix.example.org/
+            client_base_url: https://matrix.scalar.cloud/
             enable_notifs: false
-            notif_from: Matrix <matrix@example.org>
+            notif_from: NEO <matrix@scalar.cloud>
 
           # https://element-hq.github.io/synapse/latest/usage/configuration/config_documentation.html#room_list_publication_rules
           room_list_publication_rules: [ ] # Default deny
@@ -187,7 +187,7 @@ spec:
           config:
             default_server_config:
               m.homeserver:
-                base_url: https://matrix.scalar.cloud/
+                base_url: https://web.matrix.scalar.cloud/
                 server_name: Matrix
   project: default
   syncPolicy:
