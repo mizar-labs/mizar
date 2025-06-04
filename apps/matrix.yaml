@@ -69,7 +69,7 @@ spec:
           # Miscellaneous
           auto_join_rooms: [ ]
           enable_registration: true
-          enable_registration_without_verification: false
+          enable_registration_without_verification: true
           trusted_key_servers:
             - server_name: "matrix.org"
           report_stats: false
