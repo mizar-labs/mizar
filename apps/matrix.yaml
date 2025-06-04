@@ -190,6 +190,19 @@ spec:
               m.homeserver:
                 base_url: https://matrix.scalar.cloud/
                 server_name: Matrix
+        postgresql:
+          enabled: true
+          auth:
+            username: matrix
+            database: matrix
+          primary:
+            initdb:
+              args: --encoding=UTF8
+            extraEnvVars:
+              - name: LC_COLLATE
+                value: C
+              - name: LC_CTYPE
+                value: C
   project: default
   syncPolicy:
     automated:
