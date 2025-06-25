@@ -149,7 +149,7 @@ spec:
             persistence:
               enabled: true
           replica:
-            replicaCount: 3
+            replicaCount: 1
   project: default
   syncPolicy:
     automated:
