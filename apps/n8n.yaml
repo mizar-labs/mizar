@@ -21,13 +21,6 @@ spec:
         hostname: &hostname n8n.scalar.cloud
         url: &url https://n8n.scalar.cloud
 
-        image:
-          repository: 8gears.container-registry.com/ops/n8n
-          tag: 1.81.4
-          pullPolicy: Always
-        imagePullSecrets:
-          - name: 8gears-registry-n8n
-
         main:
           config:
             n8n:
