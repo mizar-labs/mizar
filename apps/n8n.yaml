@@ -14,8 +14,25 @@ spec:
     helm:
       releaseName: n8n
       values: |
+        #Prod like set up with CloudNativePG and nginx-ingress
+
+        # Define hostname anchor at the top of the file
+        _shared_config:
+        hostname: &hostname n8n.scalar.cloud
+        url: &url https://n8n.scalar.cloud
+
+        image:
+          repository: 8gears.container-registry.com/ops/n8n
+          tag: 1.81.4
+          pullPolicy: Always
+        imagePullSecrets:
+          - name: 8gears-registry-n8n
+
         main:
           config:
+            n8n:
+              editor_base_url: *url
+            executions_mode: queue
             db:
               type: postgresdb
               postgresdb:
@@ -28,23 +45,31 @@ spec:
                   enabled: true
                   reject_Unauthorized: true
                   ca_file: "/home/ssl/certs/postgresql/ca.crt"
+            # webhook related settings
+            webhook_url: *url
+            queue:
+              health:
+                check:
+                  active: true
+              bull:
+                redis:
+                  host: n8n-valkey-primary
+                  port: 6379
           secret:
             n8n:
               encryption_key: "<your-secure-encryption-key>"
-
-          extraEnv:
+          extraEnv: &extraEnv
             DB_POSTGRESDB_PASSWORD:
               valueFrom:
                 secretKeyRef:
                   name: db-app
                   key: password
           # Mount the CNPG CA Cert into N8N container
-          extraVolumeMounts:
+          extraVolumeMounts: &extraVolumeMounts
             - name: db-ca-cert
               mountPath: /home/ssl/certs/postgresql
               readOnly: true
-
-          extraVolumes:
+          extraVolumes: &extraVolumes
             - name: db-ca-cert
               secret:
                 secretName: db-ca
@@ -52,29 +77,56 @@ spec:
                   - key: ca.crt
                     path: ca.crt
           resources:
-            limits:
-              memory: 2048Mi
             requests:
               memory: 512Mi
 
+        worker:
+          enabled: true
+          extraEnv: *extraEnv # using YAML magic (anchors) to reference main extraEnv
+          extraVolumeMounts: *extraVolumeMounts # using YAML magic (anchors) to reference main extraVolumeMounts
+          extraVolumes: *extraVolumes # using YAML magic (anchors) to reference main extraVolumes
+
+        webhook:
+          enabled: true
+          extraEnv: *extraEnv # using YAML magic (anchors) to reference main extraEnv
+          extraVolumeMounts: *extraVolumeMounts # using YAML magic (anchors) to reference main extraVolumeMounts
+          extraVolumes: *extraVolumes # using YAML magic (anchors) to reference main extraVolumes
+
+        valkey:
+          enabled: true
+          architecture: standalone
+          sentinel:
+            enabled: false
+          auth:
+            enabled: false
+          primary:
+            kind: Deployment
+            persistence:
+              enabled: false
+            resources:
+              requests:
+                memory: 256Mi
+                cpu: 100m
+
+
         ingress:
           enabled: false
-          className: tailscale
+          className: nginx
           annotations:
-            tailscale.com/experimental-forward-cluster-traffic-via-ingress: "true"
-            gethomepage.dev/description: Workflow Automation
-            gethomepage.dev/enabled: "true"
-            gethomepage.dev/group: Services
-            gethomepage.dev/icon: sh-n8n.png
-            gethomepage.dev/name: N8N
-            gethomepage.dev/href: https://n8n.tahr-toad.ts.net
+            cert-manager.io/cluster-issuer: letsencrypt-prod
+            nginx.ingress.kubernetes.io/proxy-body-size: "0"
+            nginx.ingress.kubernetes.io/proxy-buffering: "off"
+            nginx.ingress.kubernetes.io/proxy-request-buffering: "off"
+            nginx.ingress.kubernetes.io/ssl-redirect: "true"
           hosts:
-            - host: n8n
+            - host: *hostname
               paths:
                 - /
           tls:
-            hosts:
-              - n8n
+            - secretName: n8n-ingress-tls
+              hosts:
+                - *hostname
+
 
 
         # cnpg DB cluster request
@@ -94,8 +146,6 @@ spec:
                   shared_buffers: "64MB"
               resources:
                 requests:
-                  memory: "512Mi"
-                limits:
                   memory: "512Mi"
               storage:
                 size: 1Gi

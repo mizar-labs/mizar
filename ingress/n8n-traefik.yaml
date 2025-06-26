@@ -9,13 +9,13 @@ metadata:
     gethomepage.dev/group: Services
     gethomepage.dev/icon: sh-n8n.png
     gethomepage.dev/name: N8N
-    gethomepage.dev/href: https://n8n.mizar.scalar.cloud
+    gethomepage.dev/href: https://n8n.scalar.cloud
 spec:
   entryPoints:
     - websecure
   routes:
     - kind: Rule
-      match: Host(`n8n.mizar.scalar.cloud`)
+      match: Host(`n8n.scalar.cloud`)
       priority: 10
       services:
         - name: n8n
@@ -23,17 +23,17 @@ spec:
           namespace: n8n
           port: http
   tls:
-    secretName: n8n-tls
+    secretName: n8n-scalar-tls
 ---
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
-  name: n8n
+  name: n8n-scalar
   namespace: n8n
 spec:
-  secretName: n8n-tls
+  secretName: n8n-scalar-tls
   dnsNames:
-    - "n8n.mizar.scalar.cloud"
+    - "n8n.scalar.cloud"
   issuerRef:
     name: le-prod
     kind: ClusterIssuer
