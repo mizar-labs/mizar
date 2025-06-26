@@ -25,6 +25,7 @@ spec:
           config:
             n8n:
               editor_base_url: *url
+              generic_timezone: "America/Chicago"
             executions_mode: queue
             db:
               type: postgresdb
