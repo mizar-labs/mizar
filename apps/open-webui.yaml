@@ -9,7 +9,7 @@ spec:
     namespace: ai
   source:
     repoURL: https://helm.openwebui.com/
-    targetRevision: 6.22.0
+    targetRevision: 7.0.1
     chart: open-webui
     helm:
       releaseName: prod
@@ -45,7 +45,7 @@ spec:
 
         tika:
           # -- Automatically install Apache Tika to extend Open WebUI
-          enabled: true
+          enabled: false
 
         # -- A list of Ollama API endpoints. These can be added in lieu of automatically installing the Ollama Helm chart, or in addition to it.
         ollamaUrls: [ "http://prod-ollama.ai:11434" ]
