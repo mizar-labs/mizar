@@ -9,7 +9,7 @@ spec:
     namespace: ai
   source:
     repoURL: https://otwld.github.io/ollama-helm/
-    targetRevision: 1.20.0
+    targetRevision: 1.26.0
     chart: ollama
     helm:
       releaseName: prod
