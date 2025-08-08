@@ -116,7 +116,7 @@ spec:
             failureThreshold: 3
           terminationMessagePath: /dev/termination-log
           terminationMessagePolicy: File
-          imagePullPolicy: IfNotPresent
+          imagePullPolicy: Always
           securityContext: {}
       restartPolicy: Always
       terminationGracePeriodSeconds: 30
