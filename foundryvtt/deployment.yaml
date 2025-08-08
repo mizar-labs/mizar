@@ -38,14 +38,14 @@ spec:
               value: '16'
             - name: CONTAINER_CACHE
               value: /data/container_cache
-            - name: FOUNDRY_GID
-              value: '421'
+            #- name: FOUNDRY_GID
+            #  value: '421'
             - name: CONTAINER_PATCHES
               value: /data/patches
             - name: TIMEZONE
               value: America/Chicago
-            - name: FOUNDRY_UID
-              value: '421'
+            #- name: FOUNDRY_UID
+            #  value: '421'
             - name: FOUNDRY_USERNAME
               valueFrom:
                 secretKeyRef:
@@ -117,7 +117,10 @@ spec:
           terminationMessagePath: /dev/termination-log
           terminationMessagePolicy: File
           imagePullPolicy: Always
-          securityContext: {}
+          securityContext:
+            runAsUser: 421
+            runAsGroup: 421
+            fsGroup: 421
       restartPolicy: Always
       terminationGracePeriodSeconds: 30
       dnsPolicy: ClusterFirst
