@@ -28,7 +28,7 @@ spec:
             defaultMode: 420
       containers:
         - name: foundry-vtt
-          image: felddy/foundryvtt:13.341
+          image: felddy/foundryvtt:13.346
           ports:
             - name: http
               containerPort: 30000
@@ -79,7 +79,7 @@ spec:
             - name: FOUNDRY_PROXY_SSL
               value: 'true'
             - name: FOUNDRY_VERSION
-              value: '13.341'
+              value: '13.346'
             - name: FOUNDRY_AWS_CONFIG
               value: /etc/secretaws/awsConfig.json
             - name: FOUNDRY_COMPRESS_WEBSOCKET
