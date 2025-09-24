@@ -16,7 +16,7 @@ spec:
           namespace: foundry
           port: http
   tls:
-    secretName: foundryvtt-tls
+    secretName: foundryvtt-tls-2
 ---
 apiVersion: cert-manager.io/v1
 kind: Certificate
@@ -24,7 +24,7 @@ metadata:
   name: foundryvtt
   namespace: foundry
 spec:
-  secretName: foundryvtt-tls
+  secretName: foundryvtt-tls-2
   dnsNames:
     - "foundry.mizar.scalar.cloud"
   issuerRef:
