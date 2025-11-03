@@ -79,7 +79,7 @@ spec:
             - name: FOUNDRY_PROXY_SSL
               value: 'true'
             - name: FOUNDRY_VERSION
-              value: '13.346'
+              value: '13.350'
             - name: FOUNDRY_AWS_CONFIG
               value: /etc/secretaws/awsConfig.json
             - name: FOUNDRY_COMPRESS_WEBSOCKET
