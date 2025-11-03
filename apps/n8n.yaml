@@ -9,7 +9,7 @@ spec:
     server: https://kubernetes.default.svc
   source:
     repoURL: 8gears.container-registry.com/library
-    targetRevision: 1.0.10
+    targetRevision: 1.1.0
     chart: n8n
     helm:
       releaseName: n8n
