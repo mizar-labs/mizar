@@ -33,7 +33,7 @@ spec:
           resources: {}
           volumeMounts:
             - name: glance-config
-              mountPath: /app/glance.yml
+              mountPath: /app/config/glance.yml
               subPath: glance.yml
           terminationMessagePath: /dev/termination-log
           terminationMessagePolicy: File

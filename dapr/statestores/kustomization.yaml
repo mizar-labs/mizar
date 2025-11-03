@@ -1,4 +1,0 @@
-kind: Kustomization
-resources:
-  - discollama-redis.yaml
-apiVersion: kustomize.config.k8s.io/v1beta1
