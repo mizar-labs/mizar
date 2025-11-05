@@ -103,6 +103,8 @@ spec:
               requests:
                 memory: 256Mi
                 cpu: 100m
+          networkPolicy:
+            enabled: false
 
 
         ingress:
