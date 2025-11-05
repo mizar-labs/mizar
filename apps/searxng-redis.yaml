@@ -9,10 +9,11 @@ spec:
     server: https://kubernetes.default.svc
   source:
     repoURL: registry-1.docker.io/bitnamicharts
-    targetRevision: 20.6.1
+    targetRevision: 23.2.5
     chart: redis
     helm:
       values: |
+        architecture: standalone
         auth:
           enabled: false
         networkPolicy:
