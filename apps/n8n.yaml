@@ -88,6 +88,8 @@ spec:
 
         valkey:
           enabled: true
+          image:
+            tag: latest
           architecture: standalone
           sentinel:
             enabled: false
