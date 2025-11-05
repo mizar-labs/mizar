@@ -53,6 +53,7 @@ spec:
             n8n:
               encryption_key: "<your-secure-encryption-key>"
           extraEnv: &extraEnv
+            N8N_PROXY_HOPS: "1"
             DB_POSTGRESDB_PASSWORD:
               valueFrom:
                 secretKeyRef:
@@ -103,8 +104,6 @@ spec:
               requests:
                 memory: 256Mi
                 cpu: 100m
-          networkPolicy:
-            enabled: false
 
 
         ingress:
