@@ -96,7 +96,7 @@ spec:
           primary:
             kind: Deployment
             persistence:
-              enabled: false
+              enabled: true
             resources:
               requests:
                 memory: 256Mi
