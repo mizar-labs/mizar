@@ -78,7 +78,7 @@ spec:
           enabled: true
           extraEnv:
             <<: *extraEnv # using YAML magic (anchors) to reference main extraEnv
-            N8N_PROXY_HOPS: "1"
+            N8N_PROXY_HOPS: 1
           extraVolumeMounts: *extraVolumeMounts # using YAML magic (anchors) to reference main extraVolumeMounts
           extraVolumes: *extraVolumes # using YAML magic (anchors) to reference main extraVolumes
 
