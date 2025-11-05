@@ -58,6 +58,7 @@ spec:
                 secretKeyRef:
                   name: db-app
                   key: password
+            N8N_PROXY_HOPS: 1
           # Mount the CNPG CA Cert into N8N container
           extraVolumeMounts: &extraVolumeMounts
             - name: db-ca-cert
@@ -76,9 +77,7 @@ spec:
 
         worker:
           enabled: true
-          extraEnv:
-            <<: *extraEnv # using YAML magic (anchors) to reference main extraEnv
-            N8N_PROXY_HOPS: 1
+          extraEnv: *extraEnv # using YAML magic (anchors) to reference main extraEnv
           extraVolumeMounts: *extraVolumeMounts # using YAML magic (anchors) to reference main extraVolumeMounts
           extraVolumes: *extraVolumes # using YAML magic (anchors) to reference main extraVolumes
 
