@@ -58,7 +58,8 @@ spec:
                 secretKeyRef:
                   name: db-app
                   key: password
-            N8N_PROXY_HOPS: 1
+            N8N_PROXY_HOPS:
+              value: "1"
           # Mount the CNPG CA Cert into N8N container
           extraVolumeMounts: &extraVolumeMounts
             - name: db-ca-cert
