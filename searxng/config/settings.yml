@@ -3,7 +3,6 @@ use_default_settings:
   engines:
     keep_only:
       - google
-      - duckduckgo
 server:
   limiter: false  # can be disabled for a private instance
   image_proxy: true
