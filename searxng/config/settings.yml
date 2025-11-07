@@ -1,5 +1,9 @@
 # see https://docs.searxng.org/admin/settings/settings.html#settings-use-default-settings
-use_default_settings: true
+use_default_settings:
+  engines:
+    keep_only:
+      - google
+      - duckduckgo
 server:
   limiter: false  # can be disabled for a private instance
   image_proxy: true
@@ -7,6 +11,7 @@ ui:
   static_use_hash: true
 search:
   safe_search: 0
+  autocomplete: "google"
   formats:
     - html
     - json
