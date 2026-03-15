@@ -41,17 +41,17 @@ spec:
           # -- Automatically install Pipelines chart to extend Open WebUI functionality using Pipelines: https://github.com/open-webui/pipelines
           enabled: true
           # -- This section can be used to pass required environment variables to your pipelines (e.g. Langfuse hostname)
-          extraEnvVars: [ ]
+          extraEnvVars: []
 
         tika:
           # -- Automatically install Apache Tika to extend Open WebUI
           enabled: false
 
         # -- A list of Ollama API endpoints. These can be added in lieu of automatically installing the Ollama Helm chart, or in addition to it.
-        ollamaUrls: [ "http://prod-ollama.ai:11434" ]
-          # - http://prod-ollama:11434
-          # - http://prod-ollama2:11434
-          # - http://prod-ollama3:11434
+        #ollamaUrls: [ "http://prod-ollama.ai:11434" ]
+        # - http://prod-ollama:11434
+        # - http://prod-ollama2:11434
+        # - http://prod-ollama3:11434
         # - http://prod-ollama4:11434
         # - http://prod-ollama5:11434
 
@@ -66,7 +66,7 @@ spec:
           # -- Specifies the URL of the Redis instance for websocket communication. Template with `redis://[:<password>@]<hostname>:<port>/<db>`
           url: redis://open-webui-redis:6379/0
           # -- Node selector for websocket pods
-          nodeSelector: { }
+          nodeSelector: {}
           # -- Deploys a redis
           redis:
             # -- Enable redis installation
@@ -76,24 +76,24 @@ spec:
             # -- Redis name
             name: open-webui-redis
             # -- Redis labels
-            labels: { }
+            labels: {}
             # -- Redis annotations
-            annotations: { }
+            annotations: {}
             # -- Redis pod
             pods:
               # -- Redis pod annotations
-              annotations: { }
+              annotations: {}
             # -- Redis image
             image:
               repository: redis
               tag: 7.4.2-alpine3.21
               pullPolicy: IfNotPresent
             # -- Redis command (overrides default)
-            command: [ ]
+            command: []
             # -- Redis arguments (overrides default)
-            args: [ ]
+            args: []
             # -- Redis resources
-            resources: { }
+            resources: {}
             # -- Redis service
             service:
               # -- Redis container/target port
@@ -101,22 +101,21 @@ spec:
               # -- Redis service type
               type: ClusterIP
               # -- Redis service labels
-              labels: { }
+              labels: {}
               # -- Redis service annotations
-              annotations: { }
+              annotations: {}
               # -- Redis service port
               port: 6379
               # -- Redis service node port. Valid only when type is `NodePort`
               nodePort: ""
             # -- Redis tolerations for pod assignment
-            tolerations: [ ]
+            tolerations: []
 
             # -- Redis affinity for pod assignment
-            affinity: { }
+            affinity: {}
 
             # -- Redis security context
-            securityContext:
-              { }
+            securityContext: {}
             # runAsUser: 999
             # runAsGroup: 1000
 
@@ -142,12 +141,12 @@ spec:
         # -- Value of cluster domain
         clusterDomain: cluster.local
 
-        annotations: { }
-        podAnnotations: { }
-        podLabels: { }
+        annotations: {}
+        podAnnotations: {}
+        podLabels: {}
         replicaCount: 1
         # -- Strategy for updating the workload manager: deployment or statefulset
-        strategy: { }
+        strategy: {}
         # -- Open WebUI image tags can be found here: https://github.com/open-webui/open-webui
         image:
           repository: ghcr.io/open-webui/open-webui
@@ -157,18 +156,18 @@ spec:
         serviceAccount:
           enable: true
           name: ""
-          annotations: { }
+          annotations: {}
           automountServiceAccountToken: false
 
         # -- Configure imagePullSecrets to use private registry
         # ref: <https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry>
-        imagePullSecrets: [ ]
+        imagePullSecrets: []
         # imagePullSecrets:
         # - name: myRegistryKeySecretName
 
         # -- Probe for liveness of the Open WebUI container
         # ref: <https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes>
-        livenessProbe: { }
+        livenessProbe: {}
         # livenessProbe:
         #   httpGet:
         #     path: /health
@@ -178,7 +177,7 @@ spec:
 
         # -- Probe for readiness of the Open WebUI container
         # ref: <https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes>
-        readinessProbe: { }
+        readinessProbe: {}
         # readinessProbe:
         #   httpGet:
         #     path: /health/db
@@ -188,7 +187,7 @@ spec:
 
         # -- Probe for startup of the Open WebUI container
         # ref: <https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes>
-        startupProbe: { }
+        startupProbe: {}
         # startupProbe:
         #   httpGet:
         #     path: /health
@@ -197,10 +196,10 @@ spec:
         #   periodSeconds: 5
         #   failureThreshold: 20
 
-        resources: { }
+        resources: {}
 
         copyAppData:
-          resources: { }
+          resources: {}
 
         managedCertificate:
           enabled: false
@@ -212,7 +211,7 @@ spec:
           enabled: false
           class: ""
           # -- Use appropriate annotations for your Ingress controller, e.g., for NGINX:
-          annotations: { }
+          annotations: {}
           #   # Example for GKE Ingress
           #   kubernetes.io/ingress.class: "gce"
           #   kubernetes.io/ingress.global-static-ip-name: "open-webui-external-ip"   #  you need to create this address in GCP console
@@ -223,13 +222,13 @@ spec:
           #   networking.gke.io/managed-certificates: "mydomain-chat-cert"
           #   # nginx.ingress.kubernetes.io/rewrite-target: /
           host: "chat.example.com" # update to your real domain
-          additionalHosts: [ ]
+          additionalHosts: []
           tls: false
           existingSecret: ""
 
           # -- Additional custom labels to add to the Ingress metadata
           # Useful for tagging, selecting, or applying policies to the Ingress via labels.
-          extraLabels: { }
+          extraLabels: {}
           # extraLabels:
           #   app.kubernetes.io/environment: "staging"
 
@@ -244,8 +243,8 @@ spec:
           accessModes:
             - ReadWriteOnce
           storageClass: ""
-          selector: { }
-          annotations: { }
+          selector: {}
+          annotations: {}
           # -- Sets the storage provider, availables values are `local`, `s3`, `gcs` or `azure`
           provider: local
           s3:
@@ -304,28 +303,28 @@ spec:
             keyExistingSecretKey: ""
 
         # -- Node labels for pod assignment.
-        nodeSelector: { }
+        nodeSelector: {}
 
         # -- Tolerations for pod assignment
-        tolerations: [ ]
+        tolerations: []
 
         # -- Affinity for pod assignment
-        affinity: { }
+        affinity: {}
 
         # -- Topology Spread Constraints for pod assignment
-        topologySpreadConstraints: [ ]
+        topologySpreadConstraints: []
 
         # -- HostAliases to be added to hosts-file of each container
-        hostAliases: [ ]
+        hostAliases: []
 
         # -- Service values to expose Open WebUI pods to cluster
         service:
           type: ClusterIP
-          annotations: { }
+          annotations: {}
           port: 80
           containerPort: 8080
           nodePort: ""
-          labels: { }
+          labels: {}
           loadBalancerClass: ""
 
         # -- Enables the use of OpenAI APIs
@@ -335,50 +334,49 @@ spec:
         openaiBaseApiUrl: "https://api.openai.com/v1"
 
         # -- OpenAI base API URLs to use. Overwrites the value in openaiBaseApiUrl if set
-        openaiBaseApiUrls:
-          [ ]
+        openaiBaseApiUrls: []
         # - "https://api.openai.com/v1"
         # - "https://api.company.openai.com/v1"
 
         # -- Env vars added to the Open WebUI deployment. Most up-to-date environment variables can be found here: https://docs.openwebui.com/getting-started/env-configuration/
         extraEnvVars:
           # -- Default API key value for Pipelines. Should be updated in a production deployment, or be changed to the required API key if not using Pipelines
-#          - name: OPENAI_API_KEY
-#            value: "0p3n-w3bu!"
+          #          - name: OPENAI_API_KEY
+          #            value: "0p3n-w3bu!"
           # valueFrom:
           #   secretKeyRef:
           #     name: pipelines-api-key
           #     key: api-key
-           - name: OPENAI_API_KEY
-             valueFrom:
-               secretKeyRef:
-                 name: open-webui
-                 key: OPENAI_API_KEY
-           - name: ENABLE_WEB_SEARCH
-             valueFrom:
-               secretKeyRef:
-                 name: open-webui
-                 key: ENABLE_WEB_SEARCH
-           - name: WEBUI_URL
-             valueFrom:
-               secretKeyRef:
-                 name: open-webui
-                 key: WEBUI_URL
-           - name: ENABLE_OAUTH_SIGNUP
-             valueFrom:
-               secretKeyRef:
-                 name: open-webui
-                 key: ENABLE_OAUTH_SIGNUP
+          - name: OPENAI_API_KEY
+            valueFrom:
+              secretKeyRef:
+                name: open-webui
+                key: OPENAI_API_KEY
+          - name: ENABLE_WEB_SEARCH
+            valueFrom:
+              secretKeyRef:
+                name: open-webui
+                key: ENABLE_WEB_SEARCH
+          - name: WEBUI_URL
+            valueFrom:
+              secretKeyRef:
+                name: open-webui
+                key: WEBUI_URL
+          - name: ENABLE_OAUTH_SIGNUP
+            valueFrom:
+              secretKeyRef:
+                name: open-webui
+                key: ENABLE_OAUTH_SIGNUP
           # - name: OLLAMA_DEBUG
           #   value: "1"
 
         # -- Env vars added to the Open WebUI deployment, common across environments. Most up-to-date environment variables can be found here: https://docs.openwebui.com/getting-started/env-configuration/ (caution: environment variables defined in both `extraEnvVars` and `commonEnvVars` will result in a conflict. Avoid duplicates)
-        commonEnvVars: [ ]
+        commonEnvVars: []
         # - name: RAG_EMBEDDING_ENGINE
         #   value: "openai"
 
         # -- Env vars added from configmap or secret to the Open WebUI deployment. Most up-to-date environment variables can be found here: https://docs.openwebui.com/getting-started/env-configuration/ (caution: `extraEnvVars` will take precedence over the value from `extraEnvFrom`)
-        extraEnvFrom: [ ]
+        extraEnvFrom: []
           # - configMapRef:
         #     name: my-config
         # - secretRef:
@@ -391,16 +389,16 @@ spec:
         # -- Configure container volume mounts
         # ref: <https://kubernetes.io/docs/tasks/configure-pod-container/configure-volume-storage/>
         volumeMounts:
-          initContainer: [ ]
+          initContainer: []
           # - name: ""
           #   mountPath: ""
-          container: [ ]
+          container: []
           # - name: ""
           #   mountPath: ""
 
         # -- Additional init containers to add to the deployment/statefulset
         # ref: <https://kubernetes.io/docs/concepts/workloads/pods/init-containers/>
-        extraInitContainers: [ ]
+        extraInitContainers: []
         # - name: custom-init
         #   image: busybox:latest
         #   command: ['sh', '-c', 'echo "Custom init container running"']
@@ -410,7 +408,7 @@ spec:
 
         # -- Configure pod volumes
         # ref: <https://kubernetes.io/docs/tasks/configure-pod-container/configure-volume-storage/>
-        volumes: [ ]
+        volumes: []
         # - name: ""
         #   configMap:
         #     name: ""
@@ -419,8 +417,7 @@ spec:
 
         # -- Configure pod security context
         # ref: <https://kubernetes.io/docs/tasks/configure-pod-container/security-context/#set-the-security-context-for-a-container>
-        podSecurityContext:
-          { }
+        podSecurityContext: {}
           # fsGroupChangePolicy: Always
         # sysctls: []
         # supplementalGroups: []
@@ -428,8 +425,7 @@ spec:
 
         # -- Configure container security context
         # ref: <https://kubernetes.io/docs/tasks/configure-pod-container/security-context/#set-the-security-context-for-a-containe>
-        containerSecurityContext:
-          { }
+        containerSecurityContext: {}
           # runAsUser: 1001
           # runAsGroup: 1001
           # runAsNonRoot: true
@@ -567,8 +563,7 @@ spec:
             nameHeader: ""
 
         # -- Extra resources to deploy with Open WebUI
-        extraResources:
-          [ ]
+        extraResources: []
           # - apiVersion: v1
           #   kind: ConfigMap
           #   metadata:
