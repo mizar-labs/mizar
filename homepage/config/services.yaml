@@ -1,96 +1,61 @@
 - Next Up:
-  - Calendar:
-      widget:
-        type: calendar
-        firstDayInWeek: sunday # optional - defaults to monday
-        view: monthly # optional - possible values monthly, agenda
-        maxEvents: 10 # optional - defaults to 10
-        showTime: true # optional - show time for event happening today - defaults to false
-        timezone: America/Chicago # optional and only when timezone is not detected properly (slightly slower performance) - force timezone for ical events (if it's the same - no change, if missing or different in ical - will be converted to this timezone)
-        integrations: # optional
-          - type: ical # Show calendar events from another service
-            url: {{HOMEPAGE_VAR_ICAL_URL}} # required - url to ical file
-            name: My Events # required - name for these calendar events
-            color: zinc # optional - defaults to pre-defined color for the service (zinc for ical)
-            params: # optional - additional params for the service
-              showName: true # optional - show name before event title in event line - defaults to false
-  - Agenda:
-      widget:
-        type: calendar
-        view: agenda
-        maxEvents: 10 # optional - defaults to 10
-        showTime: true # optional - show time for event happening today - defaults to false
-        previousDays: 3 # optional - shows events since three days ago - defaults to 0
-        integrations: # same as in Monthly view example
-          - type: ical # Show calendar events from another service
-            url: {{HOMEPAGE_VAR_ICAL_URL}} # required - url to ical file
-            name: My Events # required - name for these calendar events
-            color: zinc # optional - defaults to pre-defined color for the service (zinc for ical)
-            params: # optional - additional params for the service
-              showName: true # optional - show name before event title in event line - defaults to false
+    - Calendar:
+        widget:
+          type: calendar
+          firstDayInWeek: sunday # optional - defaults to monday
+          view: monthly # optional - possible values monthly, agenda
+          maxEvents: 10 # optional - defaults to 10
+          showTime: true # optional - show time for event happening today - defaults to false
+          timezone: America/Chicago # optional and only when timezone is not detected properly (slightly slower performance) - force timezone for ical events (if it's the same - no change, if missing or different in ical - will be converted to this timezone)
+          integrations: # optional
+            - type: ical # Show calendar events from another service
+              url: { { HOMEPAGE_VAR_ICAL_URL } } # required - url to ical file
+              name: My Events # required - name for these calendar events
+              color: zinc # optional - defaults to pre-defined color for the service (zinc for ical)
+              params: # optional - additional params for the service
+                showName: true # optional - show name before event title in event line - defaults to false
+    - Agenda:
+        widget:
+          type: calendar
+          view: agenda
+          maxEvents: 10 # optional - defaults to 10
+          showTime: true # optional - show time for event happening today - defaults to false
+          previousDays: 3 # optional - shows events since three days ago - defaults to 0
+          integrations: # same as in Monthly view example
+            - type: ical # Show calendar events from another service
+              url: { { HOMEPAGE_VAR_ICAL_URL } } # required - url to ical file
+              name: My Events # required - name for these calendar events
+              color: zinc # optional - defaults to pre-defined color for the service (zinc for ical)
+              params: # optional - additional params for the service
+                showName: true # optional - show name before event title in event line - defaults to false
 - Operations:
-  - Proxmox:
-      href: https://pve.tahr-toad.ts.net:8006
-      icon: proxmox.png
-      widget:
-        type: proxmox
-        url: https://pve.tahr-toad.ts.net:8006
-        username: {{HOMEPAGE_VAR_PROXMOX_USERNAME}}
-        password: {{HOMEPAGE_VAR_PROXMOX_PASSWORD}}
-  - Plex:
-      description: Media Server
-      icon: plex.png
-      href: https://plex.tahr-toad.ts.net
-      widget:
-        type: "plex"
-        url: "https://plex.tahr-toad.ts.net"
-        key: {{HOMEPAGE_VAR_PLEX_TOKEN}}
-  - ArgoCD:
-      href: https://argocd.tahr-toad.ts.net
-      icon: argo-cd.png
-      description: ArgoCD Dashboard
-      widget:
-        type: argocd
-        url: https://argocd.tahr-toad.ts.net
-        key: {{HOMEPAGE_VAR_ARGOCD_KEY}}
-  - Traefik:
-      href: https://traefik.tahr-toad.ts.net
-      icon: traefik.png
-      description: Traefik Dashboard
-      widget:
-        type: traefik
-        url: https://traefik.tahr-toad.ts.net
-  - HDHomeRun:
-      icon: hdhomerun.png
-      href: {{HOMEPAGE_VAR_HDHOMERUN_URL}}
-      description: Digital TV Tuner
-      widget:
-        type: hdhomerun
-        url: {{HOMEPAGE_VAR_HDHOMERUN_URL}}
-  - ChangeDetection.io:
-      icon: changedetection.png
-      href: https://change.tahr-toad.ts.net
-      description: Detect Changes on websites
-      widget:
-        type: changedetectionio
-        url: https://change.tahr-toad.ts.net
-        key: {{HOMEPAGE_VAR_CHANGEDETECTION_KEY}}
-  - Tautulli:
-      icon: tautulli.png
-      href: https://tautulli.tahr-toad.ts.net
-      description: Plex Stats
-      widget:
-        type: tautulli
-        url: https://tautulli.tahr-toad.ts.net
-        key: {{HOMEPAGE_VAR_TAUTULLI_KEY}}
-        enableUser: true
-        showEpisodeNumber: true
-        expandOneStreamToTwoRows: false
-
-
-
-
-
-
-
-
+    - Proxmox:
+        href: https://pve.tahr-toad.ts.net:8006
+        icon: proxmox.png
+        widget:
+          type: proxmox
+          url: https://pve.tahr-toad.ts.net:8006
+          username: { { HOMEPAGE_VAR_PROXMOX_USERNAME } }
+          password: { { HOMEPAGE_VAR_PROXMOX_PASSWORD } }
+    - ArgoCD:
+        href: https://argocd.tahr-toad.ts.net
+        icon: argo-cd.png
+        description: ArgoCD Dashboard
+        widget:
+          type: argocd
+          url: https://argocd.tahr-toad.ts.net
+          key: { { HOMEPAGE_VAR_ARGOCD_KEY } }
+    - Traefik:
+        href: https://traefik.tahr-toad.ts.net
+        icon: traefik.png
+        description: Traefik Dashboard
+        widget:
+          type: traefik
+          url: https://traefik.tahr-toad.ts.net
+    - HDHomeRun:
+        icon: hdhomerun.png
+        href: { { HOMEPAGE_VAR_HDHOMERUN_URL } }
+        description: Digital TV Tuner
+        widget:
+          type: hdhomerun
+          url: { { HOMEPAGE_VAR_HDHOMERUN_URL } }
