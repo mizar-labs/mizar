@@ -53,6 +53,7 @@
           type: hdhomerun
           url: {{HOMEPAGE_VAR_HDHOMERUN_URL}}
     - Minecraft:
+        icon: minecraft-detailed.png
         widget:
           type: minecraft
           url: udp://mc.scalar.cloud:25565
