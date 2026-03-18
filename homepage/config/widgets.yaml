@@ -1,8 +1,3 @@
-- unifi_console:
-    url: https://udm.tahr-toad.ts.net
-    username: { { HOMEPAGE_VAR_UNIFI_USERNAME } }
-    password: { { HOMEPAGE_VAR_UNIFI_PASSWORD } }
-
 - kubernetes:
     cluster:
       show: true
@@ -21,7 +16,7 @@
     latitude: 30.677446
     longitude: -96.330783
     units: imperial
-    apiKey: { { HOMEPAGE_VAR_OPENWEATHERMAP_API_KEY } }
+    apiKey: {{HOMEPAGE_VAR_OPENWEATHERMAP_API_KEY}}
     cache: 5 # Time in minutes to cache API responses, to stay within limits
     format: # optional, Intl.NumberFormat options
       maximumFractionDigits: 1

@@ -9,7 +9,7 @@
           timezone: America/Chicago # optional and only when timezone is not detected properly (slightly slower performance) - force timezone for ical events (if it's the same - no change, if missing or different in ical - will be converted to this timezone)
           integrations: # optional
             - type: ical # Show calendar events from another service
-              url: { { HOMEPAGE_VAR_ICAL_URL } } # required - url to ical file
+              url: {{HOMEPAGE_VAR_ICAL_URL}} # required - url to ical file
               name: My Events # required - name for these calendar events
               color: zinc # optional - defaults to pre-defined color for the service (zinc for ical)
               params: # optional - additional params for the service
@@ -23,7 +23,7 @@
           previousDays: 3 # optional - shows events since three days ago - defaults to 0
           integrations: # same as in Monthly view example
             - type: ical # Show calendar events from another service
-              url: { { HOMEPAGE_VAR_ICAL_URL } } # required - url to ical file
+              url: {{HOMEPAGE_VAR_ICAL_URL}} # required - url to ical file
               name: My Events # required - name for these calendar events
               color: zinc # optional - defaults to pre-defined color for the service (zinc for ical)
               params: # optional - additional params for the service

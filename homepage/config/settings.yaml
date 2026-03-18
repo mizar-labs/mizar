@@ -1,6 +1,6 @@
 providers:
-  finnhub: { { HOMEPAGE_VAR_FINNHUB_API_KEY } }
-  hdhomerun: { { HOMEPAGE_VAR_HDHOMERUN_URL } }
+  finnhub: {{HOMEPAGE_VAR_FINNHUB_API_KEY}}
+  hdhomerun: {{HOMEPAGE_VAR_HDHOMERUN_URL}}
 layout:
   DNS:
     style: row
