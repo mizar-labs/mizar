@@ -45,13 +45,6 @@
           type: argocd
           url: https://argocd.tahr-toad.ts.net
           key: {{HOMEPAGE_VAR_ARGOCD_KEY}}
-    - Traefik:
-        href: https://traefik.tahr-toad.ts.net
-        icon: traefik.png
-        description: Traefik Dashboard
-        widget:
-          type: traefik
-          url: https://traefik.tahr-toad.ts.net
     - HDHomeRun:
         icon: hdhomerun.png
         href: {{HOMEPAGE_VAR_HDHOMERUN_URL}}
