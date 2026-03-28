@@ -10,7 +10,7 @@ spec:
     service:
       name: octobot
       port:
-        name: "80"
+        name: http
   ingressClassName: tailscale
   tls:
     - hosts:
