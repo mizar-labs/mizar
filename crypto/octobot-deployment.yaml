@@ -24,7 +24,7 @@ spec:
         io.kompose.service: octobot
     spec:
       containers:
-        - image: drakkarsoftware/octobot:stable
+        - image: drakkarsoftware/octobot:latest
           name: octobot
           ports:
             - containerPort: 5001
