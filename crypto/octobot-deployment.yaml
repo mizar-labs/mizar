@@ -1,0 +1,54 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert -f docker-compose.yml -n crypto
+    kompose.version: 1.38.0 (HEAD)
+  labels:
+    io.kompose.service: octobot
+  name: octobot
+  namespace: crypto
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: octobot
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert -f docker-compose.yml -n crypto
+        kompose.version: 1.38.0 (HEAD)
+      labels:
+        io.kompose.service: octobot
+    spec:
+      containers:
+        - image: drakkarsoftware/octobot:stable
+          name: octobot
+          ports:
+            - containerPort: 5001
+              protocol: TCP
+          volumeMounts:
+            - mountPath: /octobot/logs
+              name: octobot-claim0
+            - mountPath: /octobot/backtesting
+              name: octobot-claim1
+            - mountPath: /octobot/tentacles
+              name: octobot-claim2
+            - mountPath: /octobot/user
+              name: octobot-claim3
+      restartPolicy: Always
+      volumes:
+        - name: octobot-claim0
+          persistentVolumeClaim:
+            claimName: octobot-claim0
+        - name: octobot-claim1
+          persistentVolumeClaim:
+            claimName: octobot-claim1
+        - name: octobot-claim2
+          persistentVolumeClaim:
+            claimName: octobot-claim2
+        - name: octobot-claim3
+          persistentVolumeClaim:
+            claimName: octobot-claim3
