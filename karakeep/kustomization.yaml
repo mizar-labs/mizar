@@ -9,3 +9,4 @@ resources:
   - pvc-meilisearch.yaml
   - service-chrome.yaml
   - service-meilisearch.yaml
+  - service-web.yaml
