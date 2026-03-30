@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: octobot
+  namespace: crypto
 spec:
   replicas: 1
   selector:
