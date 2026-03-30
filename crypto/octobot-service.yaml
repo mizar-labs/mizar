@@ -1,12 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  annotations:
-    kompose.cmd: kompose convert -f docker-compose.yml -n crypto
-    kompose.version: 1.38.0 (HEAD)
-  labels:
-    io.kompose.service: octobot
-  name: octobot
+  name: octobot-service
   namespace: crypto
 spec:
   ports:
@@ -14,4 +9,4 @@ spec:
       port: 80
       targetPort: 5001
   selector:
-    io.kompose.service: octobot
+    app: octobot
