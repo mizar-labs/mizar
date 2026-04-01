@@ -11,7 +11,7 @@ spec:
       match: Host(`meals.mizar.scalar.cloud`)
       priority: 10
       services:
-        - name: web
+        - name: gunicorn
           kind: Service
           namespace: tandoor
           port: gunicorn
