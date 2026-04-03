@@ -49,6 +49,8 @@ spec:
                 secretKeyRef:
                   name: recipes
                   key: postgresql-postgres-password
+            - name: EMAIL_USE_SSL
+              value: "1"
             - name: EMAIL_HOST
               valueFrom:
                 secretKeyRef:
