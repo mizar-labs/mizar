@@ -44,11 +44,33 @@ spec:
               value: postgres
             - name: POSTGRES_DB
               value: recipes
+            - name: EMAIL_USE_TLS
+              value: 1
             - name: POSTGRES_PASSWORD
               valueFrom:
                 secretKeyRef:
                   name: recipes
                   key: postgresql-postgres-password
+            - name: EMAIL_HOST
+              valueFrom:
+                secretKeyRef:
+                  name: recipes
+                  key: email-host
+            - name: EMAIL_PORT
+              valueFrom:
+                secretKeyRef:
+                  name: recipes
+                  key: email-port
+            - name: EMAIL_HOST_USER
+              valueFrom:
+                secretKeyRef:
+                  name: recipes
+                  key: email-host-user
+            - name: EMAIL_HOST_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: recipes
+                  key: email-host-password
           image: vabene1111/recipes
           imagePullPolicy: Always
           resources:
