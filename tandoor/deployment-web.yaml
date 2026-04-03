@@ -44,8 +44,6 @@ spec:
               value: postgres
             - name: POSTGRES_DB
               value: recipes
-            - name: EMAIL_USE_TLS
-              value: "1"
             - name: POSTGRES_PASSWORD
               valueFrom:
                 secretKeyRef:
