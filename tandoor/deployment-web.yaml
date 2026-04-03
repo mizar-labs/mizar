@@ -202,6 +202,21 @@ spec:
                 secretKeyRef:
                   name: recipes
                   key: email-host-password
+            - name: S3_ACCESS_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: recipes
+                  key: s3-access-key
+            - name: S3_SECRET_ACCESS_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: recipes
+                  key: s3-secret-access-key
+            - name: S3_BUCKET_NAME
+              valueFrom:
+                secretKeyRef:
+                  name: recipes
+                  key: s3-bucket-name
           securityContext:
             runAsUser: 65534
       volumes:
