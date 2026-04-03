@@ -217,6 +217,11 @@ spec:
                 secretKeyRef:
                   name: recipes
                   key: s3-bucket-name
+            - name: SPACE_AI_ENABLED
+              valueFrom:
+                secretKeyRef:
+                  name: recipes
+                  key: ai-space-enabled
           securityContext:
             runAsUser: 65534
       volumes:
