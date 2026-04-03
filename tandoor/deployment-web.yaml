@@ -49,33 +49,6 @@ spec:
                 secretKeyRef:
                   name: recipes
                   key: postgresql-postgres-password
-            - name: EMAIL_USE_SSL
-              valueFrom:
-                secretKeyRef:
-                  name: recipes
-                  key: email-use-tls
-            - name: DEFAULT_FROM_EMAIL
-              value: "tandoor@scalar.cloud"
-            - name: EMAIL_HOST
-              valueFrom:
-                secretKeyRef:
-                  name: recipes
-                  key: email-host
-            - name: EMAIL_PORT
-              valueFrom:
-                secretKeyRef:
-                  name: recipes
-                  key: email-port
-            - name: EMAIL_HOST_USER
-              valueFrom:
-                secretKeyRef:
-                  name: recipes
-                  key: email-host-user
-            - name: EMAIL_HOST_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: recipes
-                  key: email-host-password
           image: vabene1111/recipes
           imagePullPolicy: Always
           resources:
@@ -202,6 +175,33 @@ spec:
                 secretKeyRef:
                   name: recipes
                   key: postgresql-postgres-password
+            - name: EMAIL_USE_TLS
+              valueFrom:
+                secretKeyRef:
+                  name: recipes
+                  key: email-use-tls
+            - name: DEFAULT_FROM_EMAIL
+              value: "tandoor@scalar.cloud"
+            - name: EMAIL_HOST
+              valueFrom:
+                secretKeyRef:
+                  name: recipes
+                  key: email-host
+            - name: EMAIL_PORT
+              valueFrom:
+                secretKeyRef:
+                  name: recipes
+                  key: email-port
+            - name: EMAIL_HOST_USER
+              valueFrom:
+                secretKeyRef:
+                  name: recipes
+                  key: email-host-user
+            - name: EMAIL_HOST_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: recipes
+                  key: email-host-password
           securityContext:
             runAsUser: 65534
       volumes:
