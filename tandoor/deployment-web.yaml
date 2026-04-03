@@ -49,8 +49,11 @@ spec:
                 secretKeyRef:
                   name: recipes
                   key: postgresql-postgres-password
-            - name: EMAIL_USE_SSL
-              value: "1"
+            - name: EMAIL_USE_TLS
+              valueFrom:
+                secretKeyRef:
+                  name: recipes
+                  key: email-use-tls
             - name: DEFAULT_FROM_EMAIL
               value: "tandoor@scalar.cloud"
             - name: EMAIL_HOST
