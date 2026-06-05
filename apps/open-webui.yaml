@@ -9,7 +9,7 @@ spec:
     namespace: ai
   source:
     repoURL: https://helm.openwebui.com/
-    targetRevision: 9.0.0
+    targetRevision: 14.8.0
     chart: open-webui
     helm:
       releaseName: prod
